@@ -8,4 +8,6 @@ module co.edu.usbbog.datanetworkoverlock {
 
     opens co.edu.usbbog.datanetworkoverlock to javafx.fxml;
     exports co.edu.usbbog.datanetworkoverlock;
+    exports co.edu.usbbog.datanetworkoverlock.programa;
+    opens co.edu.usbbog.datanetworkoverlock.programa to javafx.fxml;
 }
