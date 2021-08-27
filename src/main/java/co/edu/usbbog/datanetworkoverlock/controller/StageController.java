@@ -1,9 +1,9 @@
-package co.edu.usbbog.datanetworkoverlock;
+package co.edu.usbbog.datanetworkoverlock.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class StageController {
     @FXML
     private Label welcomeText;
 

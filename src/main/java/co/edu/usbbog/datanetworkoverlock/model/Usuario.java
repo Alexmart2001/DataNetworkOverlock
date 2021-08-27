@@ -1,4 +1,4 @@
-package co.edu.usbbog.datanetworkoverlock.programa;
+package co.edu.usbbog.datanetworkoverlock.model;
 
 public class Usuario {
 

@@ -1,4 +1,6 @@
-package co.edu.usbbog.datanetworkoverlock.programa;
+package co.edu.usbbog.datanetworkoverlock.controller;
+
+import co.edu.usbbog.datanetworkoverlock.model.Usuario;
 
 public class RegistroUsuario {
 

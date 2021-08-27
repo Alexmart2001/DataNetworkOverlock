@@ -1,6 +1,6 @@
-package co.edu.usbbog.datanetworkoverlock.programa;
+package co.edu.usbbog.datanetworkoverlock.controller;
 
-import co.edu.usbbog.datanetworkoverlock.programa.Usuario;
+import co.edu.usbbog.datanetworkoverlock.model.Usuario;
 
 import java.util.Calendar;
 
