@@ -75,7 +75,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.usbbog.datanetworkoverlock/co.edu.usbbog.datanetworkoverlock.main.Main
+                                co.edu.usbbog.datanetworkoverlock/co.edu.usbbog.datanetworkoverlock.view.Main
                             </mainClass>
                         </configuration>
                     </execution>

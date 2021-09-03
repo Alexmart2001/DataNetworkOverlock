@@ -1,6 +1,6 @@
 package co.edu.usbbog.datanetworkoverlock.controller;
 
-import co.edu.usbbog.datanetworkoverlock.model.Usuario;
+import co.edu.usbbog.datanetworkoverlock.model.PersonaDTO;
 
 import java.util.Calendar;
 
@@ -26,7 +26,7 @@ public class InformeReportes implements Informes {
     }
 
     @Override
-    public void generar(String descripcionInforme, Calendar fechaInforme, Usuario usuario) {
+    public void generar(String descripcionInforme, Calendar fechaInforme, PersonaDTO usuario) {
 
     }
 

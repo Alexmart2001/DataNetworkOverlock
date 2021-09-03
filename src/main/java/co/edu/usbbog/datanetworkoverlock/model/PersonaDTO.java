@@ -1,30 +1,34 @@
 package co.edu.usbbog.datanetworkoverlock.model;
 
-public class Usuario {
+public class PersonaDTO {
 
     private String nombre;
     private String apellido;
-    private String user;
+    private String email;
+    private String usuario;
     private String pwd;
 
-    public Usuario(String nombre, String apellido, String user, String pwd) {
+    public PersonaDTO(String nombre, String apellido, String email, String usuario, String pwd) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.user = user;
+        this.email = email;
+        this.usuario = usuario;
         this.pwd = pwd;
     }
 
-    public Usuario(String nombre, String apellido, String user) {
+    public PersonaDTO(String nombre, String apellido, String email, String usuario) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.user = user;
+        this.email = email;
+        this.usuario = usuario;
         this.pwd = "";
     }
 
-    public Usuario() {
+    public PersonaDTO() {
         this.nombre = "";
         this.apellido = "";
-        this.user = "";
+        this.email = "";
+        this.usuario = "";
         this.pwd = "";
     }
 
@@ -44,12 +48,20 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getUser() {
-        return user;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPwd() {
@@ -65,7 +77,7 @@ public class Usuario {
         return "Usuario{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", user='" + user + '\'' +
+                ", usuario='" + usuario + '\'' +
                 '}';
     }
 
