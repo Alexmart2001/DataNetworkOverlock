@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="724.0" style="-fx-background-color: #222425;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.InicioSesion">
+   <children>
+      <Pane layoutX="100.0" layoutY="120.0" prefHeight="309.0" prefWidth="525.0" style="-fx-background-color: #222426;">
+         <children>
+            <Button layoutX="441.0" layoutY="265.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="70.0" style="-fx-background-color: #1C1B17;" text="Acceder" textFill="WHITE" />
+            <CheckBox layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Recuérdame" textFill="WHITE" />
+            <TextField layoutX="57.0" layoutY="109.0" prefHeight="31.0" prefWidth="409.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.43921568989753723" green="0.43529412150382996" blue="0.5607843399047852" />
+                           </color></Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <PasswordField layoutX="57.0" layoutY="181.0" prefHeight="31.0" prefWidth="409.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.43921568989753723" green="0.43529412150382996" blue="0.5607843399047852" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect></PasswordField>
+            <Label layoutX="57.0" layoutY="89.0" text="Nombre de usuario" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="57.0" layoutY="161.0" text="Contraseña" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect></Pane>
+      <Label layoutX="108.0" layoutY="442.0" text="Registrate  |  " textFill="WHITE" />
+      <Label layoutX="178.0" layoutY="442.0" text="¿Olvidaste tu contraseña?" textFill="WHITE" />
+      <ImageView fitHeight="59.0" fitWidth="185.0" layoutX="270.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/C:/Users/alexa/OneDrive%20-%20Universidad%20de%20San%20Buenaventura%20-%20Bogota/Recursos%20Integrador%20l/MockUp/login.png" />
+         </image></ImageView>
+      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="673.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/C:/Users/alexa/OneDrive%20-%20Universidad%20de%20San%20Buenaventura%20-%20Bogota/Recursos%20Integrador%20l/MockUp/minimizar.png" />
+         </image></ImageView>
+      <ImageView fitHeight="31.0" fitWidth="24.0" layoutX="649.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/C:/Users/alexa/OneDrive%20-%20Universidad%20de%20San%20Buenaventura%20-%20Bogota/Recursos%20Integrador%20l/MockUp/cerrar.png" />
+         </image></ImageView>
+   </children>
+</AnchorPane>
