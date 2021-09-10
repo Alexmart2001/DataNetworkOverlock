@@ -7,13 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="493.0" prefWidth="609.0"
-            style="-fx-background-color: #222425;"
-            xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="609.0" style="-fx-background-color: #222425;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
 
     <children>
         <Pane layoutX="77.0" layoutY="85.0" pickOnBounds="false" prefHeight="385.0" prefWidth="431.0" style="-fx-background-color: #222426;">
@@ -29,7 +23,7 @@
                     <font>
                         <Font size="14.0" />
                     </font></Label>
-                <TextField fx:id="Tf_Nombre" layoutX="36.0" layoutY="34.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <TextField fx:id="Tf_Nombre" layoutX="36.0" layoutY="34.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -38,7 +32,7 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.43957826495170593" green="0.43743908405303955" blue="0.5657894611358643" />
+                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                                     </color>
                                 </Light.Distant>
                             </light>
@@ -50,7 +44,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_Apellido" layoutX="36.0" layoutY="89.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <TextField fx:id="Tf_Apellido" layoutX="36.0" layoutY="89.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -59,7 +53,7 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.43957826495170593" green="0.43743908405303955" blue="0.5657894611358643" />
+                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                                     </color>
                                 </Light.Distant>
                             </light>
@@ -71,7 +65,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_correo" layoutX="36.0" layoutY="145.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <TextField fx:id="Tf_correo" layoutX="36.0" layoutY="145.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -80,7 +74,7 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.43957826495170593" green="0.43743908405303955" blue="0.5657894611358643" />
+                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                                     </color>
                                 </Light.Distant>
                             </light>
@@ -92,7 +86,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_usuario" layoutX="36.0" layoutY="202.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <TextField fx:id="Tf_usuario" layoutX="36.0" layoutY="202.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -101,7 +95,7 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.43921568989753723" green="0.43921568989753723" blue="0.5647059082984924" />
+                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                                     </color>
                                 </Light.Distant>
                             </light>
@@ -118,7 +112,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="PF_Password" layoutX="37.0" layoutY="258.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <PasswordField fx:id="PF_Password" layoutX="37.0" layoutY="258.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -127,14 +121,14 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.43921568989753723" green="0.43921568989753723" blue="0.5647059082984924" />
+                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                                     </color>
                                 </Light.Distant>
                             </light>
                         </Lighting>
                     </effect>
                 </PasswordField>
-                <PasswordField fx:id="PR_Password_2" layoutX="37.0" layoutY="313.0" prefHeight="25.0" prefWidth="360.0" style="-fx-background-color: #222420;">
+                <PasswordField fx:id="PR_Password_2" layoutX="37.0" layoutY="313.0" prefHeight="25.0" prefWidth="360.0">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -143,7 +137,7 @@
                             <light>
                                 <Light.Distant>
                            <color>
-                              <Color red="0.43921568989753723" green="0.43921568989753723" blue="0.5647059082984924" />
+                              <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
                            </color></Light.Distant>
                             </light>
                         </Lighting>
