@@ -15,7 +15,7 @@ public class Conexion {
         this.port = "3306";
         this.user = "root";
         this.pass = "password";
-        this.database = "bar_domicilio_db";
+        this.database = "";
         this.connection = null;
     }
 
@@ -24,7 +24,7 @@ public class Conexion {
             String path = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             System.out.println(path);
             this.connection = DriverManager.getConnection(path, user, pass);
-            System.out.println("Felicidades, te has conectado a FIESTERO ANDANTE");
+            System.out.println("Felicidades, te has conectado");
         } catch (SQLException ex) {
             System.out.println("lo lamentamos, no se ha podido conectar");
             System.out.println("SQLException: " + ex.getMessage());
