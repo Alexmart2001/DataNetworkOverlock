@@ -15,7 +15,7 @@ public class Conexion {
         this.port = "3306";
         this.user = "root";
         this.pass = "password";
-        this.database = "";
+        this.database = "consola";
         this.connection = null;
     }
 
