@@ -7,10 +7,10 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="609.0" style="-fx-background-color: #222425;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
 
     <children>
-        <Pane layoutX="77.0" layoutY="85.0" pickOnBounds="false" prefHeight="385.0" prefWidth="431.0" style="-fx-background-color: #222426;">
+        <Pane layoutX="125.0" layoutY="85.0" pickOnBounds="false" prefHeight="400" prefWidth="650.0" style="-fx-background-color: #222426;">
             <effect>
                 <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
@@ -19,32 +19,35 @@
                 </Lighting>
             </effect>
             <children>
-                <Label layoutX="38.0" layoutY="14.0" text="Nombre" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="42.0" text="Nombre" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font></Label>
-                <TextField fx:id="Tf_Nombre" layoutX="36.0" layoutY="34.0" prefHeight="25.0" prefWidth="360.0">
+                <TextField fx:id="Tf_Nombre" layoutX="100.0" layoutY="64.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
                                 <Shadow />
                             </bumpInput>
-                            <light>
-                                <Light.Distant>
-                                    <color>
-                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                    </color>
-                                </Light.Distant>
-                            </light>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
+                           </color>
+                        </Light.Distant>
+                     </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </TextField>
-                <Label layoutX="38.0" layoutY="69.0" text="Apellido" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="98.0" text="Apellido" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_Apellido" layoutX="36.0" layoutY="89.0" prefHeight="25.0" prefWidth="360.0">
+                <TextField fx:id="Tf_Apellido" layoutX="100.0" layoutY="120.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -59,13 +62,16 @@
                             </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </TextField>
-                <Label layoutX="38.0" layoutY="125.0" text="Correo electronico" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="154.0" text="Correo electronico" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_correo" layoutX="36.0" layoutY="145.0" prefHeight="25.0" prefWidth="360.0">
+                <TextField fx:id="Tf_correo" layoutX="100.0" layoutY="176.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -80,13 +86,16 @@
                             </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </TextField>
-                <Label layoutX="38.0" layoutY="182.0" text="Nombre de usuario" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="210.0" text="Nombre de usuario" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_usuario" layoutX="36.0" layoutY="202.0" prefHeight="25.0" prefWidth="360.0">
+                <TextField fx:id="Tf_usuario" layoutX="100.0" layoutY="232.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -101,18 +110,21 @@
                             </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </TextField>
-                <Label layoutX="35.0" layoutY="238.0" text="Contraseña" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="266.0" text="Contraseña" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="37.0" layoutY="293.0" text="Confirmar contraseña" textFill="WHITE">
+                <Label layoutX="100.0" layoutY="325.0" text="Confirmar contraseña" textFill="WHITE">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="PF_Password" layoutX="37.0" layoutY="258.0" prefHeight="25.0" prefWidth="360.0">
+                <PasswordField fx:id="PF_Password" layoutX="100.0" layoutY="288.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -127,8 +139,11 @@
                             </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </PasswordField>
-                <PasswordField fx:id="PR_Password_2" layoutX="37.0" layoutY="313.0" prefHeight="25.0" prefWidth="360.0">
+                <PasswordField fx:id="PR_Password_2" layoutX="100.0" layoutY="347.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -142,15 +157,18 @@
                             </light>
                         </Lighting>
                     </effect>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </PasswordField>
             </children>
         </Pane>
-        <ImageView fitHeight="80.0" fitWidth="404.0" layoutX="91.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="80.0" fitWidth="404.0" layoutX="248.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Iconos/iCON.png" />
             </image>
         </ImageView>
-        <Button fx:id="Btn_registrarse" layoutX="520.0" layoutY="438.0" mnemonicParsing="false" style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
+        <Button fx:id="Btn_registrarse" layoutX="773.0" layoutY="493.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
             <effect>
                 <Lighting diffuseConstant="0.55" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
@@ -161,8 +179,11 @@
                     </light>
                 </Lighting>
             </effect>
+         <font>
+            <Font size="15.0" />
+         </font>
         </Button>
-        <ImageView fx:id="Btn_close" fitHeight="20.0" fitWidth="18.0" layoutX="558.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Btn_close" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="14.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
             </image>
@@ -170,7 +191,7 @@
                 <Bloom />
             </effect>
         </ImageView>
-        <ImageView fx:id="Btn_minimizar" fitHeight="20.0" fitWidth="18.0" layoutX="577.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Btn_minimizar" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="14.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
             </image>
