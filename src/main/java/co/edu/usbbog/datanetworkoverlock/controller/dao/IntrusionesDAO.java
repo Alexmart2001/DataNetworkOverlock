@@ -1,4 +1,4 @@
-package co.edu.usbbog.datanetworkoverlock.model;
+package co.edu.usbbog.datanetworkoverlock.controller.dao;
 
-public class IntrusionesDAO {
+public interface IntrusionesDAO {
 }

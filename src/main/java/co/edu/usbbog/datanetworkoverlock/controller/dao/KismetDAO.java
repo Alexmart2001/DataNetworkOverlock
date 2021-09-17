@@ -1,4 +1,4 @@
 package co.edu.usbbog.datanetworkoverlock.controller.dao;
 
-public class KismetDAO {
+public interface KismetDAO {
 }

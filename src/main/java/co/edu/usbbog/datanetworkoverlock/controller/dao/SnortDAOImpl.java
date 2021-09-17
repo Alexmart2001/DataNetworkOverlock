@@ -1,4 +1,4 @@
 package co.edu.usbbog.datanetworkoverlock.controller.dao;
 
-public interface NmapDAO {
+public class SnortDAOImpl {
 }
