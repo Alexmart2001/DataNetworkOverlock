@@ -5,6 +5,8 @@ module co.edu.usbbog.datanetworkoverlock {
 
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
+    requires mysql.connector.java;
 
     exports co.edu.usbbog.datanetworkoverlock.view;
     opens co.edu.usbbog.datanetworkoverlock.view to javafx.fxml;

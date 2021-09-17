@@ -1,5 +1,9 @@
 package co.edu.usbbog.datanetworkoverlock.controller.config;
 
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Conexion {
 
@@ -8,14 +12,14 @@ public class Conexion {
     private final String user;
     private final String pass;
     private final String database;
-    private final String connection;
+    private Connection connection;
 
-    public Connect() {
+    public Conexion() {
         this.host = "localhost";
         this.port = "3306";
         this.user = "root";
         this.pass = "password";
-        this.database = "";
+        this.database = "consola";
         this.connection = null;
     }
 
