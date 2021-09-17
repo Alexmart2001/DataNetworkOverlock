@@ -22,25 +22,26 @@
                 <Label layoutX="100.0" layoutY="42.0" text="Nombre" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
-                    </font></Label>
+                    </font>
+                </Label>
                 <TextField fx:id="Tf_Nombre" layoutX="100.0" layoutY="64.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
                                 <Shadow />
                             </bumpInput>
-                     <light>
-                        <Light.Distant>
-                           <color>
-                              <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                           </color>
-                        </Light.Distant>
-                     </light>
+                            <light>
+                                <Light.Distant>
+                                   <color>
+                                      <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
+                                   </color>
+                                </Light.Distant>
+                            </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </TextField>
                 <Label layoutX="100.0" layoutY="98.0" text="Apellido" textFill="WHITE">
                     <font>
@@ -62,9 +63,9 @@
                             </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </TextField>
                 <Label layoutX="100.0" layoutY="154.0" text="Correo electronico" textFill="WHITE">
                     <font>
@@ -86,9 +87,9 @@
                             </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </TextField>
                 <Label layoutX="100.0" layoutY="210.0" text="Nombre de usuario" textFill="WHITE">
                     <font>
@@ -110,9 +111,9 @@
                             </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </TextField>
                 <Label layoutX="100.0" layoutY="266.0" text="Contraseña" textFill="WHITE">
                     <font>
@@ -139,9 +140,9 @@
                             </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </PasswordField>
                 <PasswordField fx:id="PR_Password_2" layoutX="100.0" layoutY="347.0" prefHeight="25.0" prefWidth="450">
                     <effect>
@@ -157,9 +158,9 @@
                             </light>
                         </Lighting>
                     </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
+                   <font>
+                      <Font size="15.0" />
+                   </font>
                 </PasswordField>
             </children>
         </Pane>
@@ -179,21 +180,21 @@
                     </light>
                 </Lighting>
             </effect>
-         <font>
-            <Font size="15.0" />
-         </font>
+             <font>
+                <Font size="15.0" />
+             </font>
         </Button>
-        <ImageView fx:id="Btn_close" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="14.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="14.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
+                <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
             </image>
             <effect>
                 <Bloom />
             </effect>
         </ImageView>
-        <ImageView fx:id="Btn_minimizar" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="14.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="14.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
+                <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
             </image>
             <effect>
                 <Bloom />
