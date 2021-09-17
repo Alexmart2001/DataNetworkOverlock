@@ -14,11 +14,13 @@
             <Button fx:id="Btn_Acceder" layoutX="580.0" layoutY="261.0" mnemonicParsing="false" onAction="#Switch1" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #1C1B17;" text="Acceder" textFill="WHITE">
                <font>
                   <Font size="15.0" />
-               </font></Button>
+               </font>
+            </Button>
             <CheckBox layoutX="20.0" layoutY="266.0" mnemonicParsing="false" text="Recuérdame" textFill="WHITE">
                <font>
                   <Font size="15.0" />
-               </font></CheckBox>
+               </font>
+            </CheckBox>
             <TextField layoutX="39.0" layoutY="79.0" prefHeight="31.0" prefWidth="623.0">
                <effect>
                   <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09">
@@ -29,10 +31,12 @@
                         <Light.Distant>
                            <color>
                               <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                           </color></Light.Distant>
+                           </color>
+                        </Light.Distant>
                      </light>
                   </Lighting>
-               </effect></TextField>
+               </effect>
+            </TextField>
             <PasswordField layoutX="39.0" layoutY="182.0" prefHeight="31.0" prefWidth="623.0">
                <effect>
                   <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
@@ -47,15 +51,18 @@
                         </Light.Distant>
                      </light>
                   </Lighting>
-               </effect></PasswordField>
+               </effect>
+            </PasswordField>
             <Label layoutX="39.0" layoutY="48.0" text="Nombre de usuario" textFill="WHITE">
                <font>
                   <Font size="15.0" />
-               </font></Label>
+               </font>
+            </Label>
             <Label layoutX="39.0" layoutY="147.0" text="Contraseña" textFill="WHITE">
                <font>
                   <Font size="15.0" />
-               </font></Label>
+               </font>
+            </Label>
          </children>
          <effect>
             <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
@@ -63,31 +70,34 @@
                   <Shadow />
                </bumpInput>
             </Lighting>
-         </effect></Pane>
+         </effect>
+      </Pane>
       <Label layoutX="108.0" layoutY="493.0" text="Registrate  |  " textFill="WHITE">
          <font>
             <Font size="15.0" />
-         </font></Label>
+         </font>
+      </Label>
       <Label layoutX="200.0" layoutY="493.0" text="¿Olvidaste tu contraseña?" textFill="WHITE">
          <font>
             <Font size="15.0" />
-         </font></Label>
+         </font>
+      </Label>
       <ImageView fitHeight="109.0" fitWidth="281.0" layoutX="310.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Iconos/login.PNG" />
          </image>
       </ImageView>
-      <ImageView fx:id="Btn_close" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
+            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
          </image>
          <effect>
             <Bloom />
          </effect>
       </ImageView>
-      <ImageView fx:id="Btn_minimizar" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
+            <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
          </image>
          <effect>
             <Bloom />

@@ -13,27 +13,27 @@ import java.io.IOException;
 
 public class ReportesController {
     @FXML
-    private ImageView Btn_close;
+    private ImageView btnClose;
     @FXML
-    private ImageView Btn_minimize;
+    private ImageView btnMinimize;
     @FXML
     private Stage stage;
     @FXML
-    private Object root;
+    private Parent root;
     @FXML
     private Scene scene;
 
     @FXML
     public void cerrar() {
         // get a handle to the stage
-        stage = (Stage) Btn_close.getScene().getWindow();
+        stage = (Stage) btnClose.getScene().getWindow();
         // do what you have to do
         stage.close();
     }
 
     @FXML
     public void minimize(){
-        stage = (Stage) Btn_minimize.getScene().getWindow();
+        stage = (Stage) btnMinimize.getScene().getWindow();
         stage.setIconified(true);
     }
 

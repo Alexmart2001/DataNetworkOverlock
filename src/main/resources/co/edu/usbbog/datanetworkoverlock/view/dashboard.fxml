@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025; -fx-border-radius: 150px;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.DashboardController">
+<AnchorPane prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.DashboardController">
    <children>
       <Pane layoutX="-2.0" prefHeight="550.0" prefWidth="235.0" style="-fx-background-color: #141418;">
          <children>
-            <ImageView fx:id="Btn_minimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
                </image>
@@ -18,7 +21,7 @@
                   <Bloom />
                </effect>
             </ImageView>
-            <ImageView fx:id="Btn_close" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
                </image>
@@ -26,38 +29,42 @@
                   <Bloom />
                </effect>
             </ImageView>
-            <Label layoutX="37.0" layoutY="101.0" text="Nmap" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="37.0" layoutY="159.0" text="Nessus" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="37.0" layoutY="287.0" text="Kismet" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="37.0" layoutY="223.0" text="Snort" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-            </Label>
             <ImageView fitHeight="44.0" fitWidth="50.0" layoutX="10.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Iconos/icons8-github-96.png" />
                </image>
             </ImageView>
+            <VBox layoutX="5.0" layoutY="107.0" prefHeight="364.0" prefWidth="228.0">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="235.0" style="-fx-label-padding: 2px 20px; -fx-font-family: 'Montserrat', sans-serif;" styleClass="options" text="Nmap" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="235.0" style="-fx-label-padding: 2px 20px; -fx-font-family: 'Montserrat', sans-serif;" text="Nessus" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="64.0" prefHeight="54.0" prefWidth="235.0" style="-fx-label-padding: 2px 20px; -fx-font-family: 'Montserrat', sans-serif;" text="Snort" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="64.0" prefHeight="54.0" prefWidth="235.0" style="-fx-label-padding: 2px 20px; -fx-font-family: 'Montserrat', sans-serif;" text="Kismet" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
          </children></Pane>
       <ImageView fitHeight="68.0" fitWidth="402.0" layoutX="250.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Iconos/overlock.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnOpciones" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#desplegarMenu" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Iconos/icons8-bulleted-list-96.png" />
          </image>
