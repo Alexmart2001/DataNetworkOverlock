@@ -12,33 +12,34 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RegistroController {
-    @FXML
-    private ImageView Btn_close;
-    @FXML
-    private ImageView Btn_minimizar;
+
     private Stage stage;
     @FXML
-    private Object root;
+    private ImageView btnClose;
+    @FXML
+    private ImageView btnMinimize;
+    @FXML
+    private Parent root;
     @FXML
     private Scene scene;
 
     @FXML
     public void cerrar() {
         // get a handle to the stage
-        stage = (Stage) Btn_close.getScene().getWindow();
+        stage = (Stage) btnClose.getScene().getWindow();
         // do what you have to do
         stage.close();
     }
 
     @FXML
     public void minimize(){
-        stage = (Stage) Btn_minimizar.getScene().getWindow();
+        stage = (Stage) btnMinimize.getScene().getWindow();
         stage.setIconified(true);
     }
 
     @FXML
     public void Switch1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+        root = FXMLLoader.load(getClass().getResource("inicioSesion.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene((Parent) root);
         stage.setScene(scene);
