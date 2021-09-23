@@ -89,7 +89,7 @@
       </ImageView>
       <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
+            <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
          </image>
          <effect>
             <Bloom />
@@ -97,7 +97,7 @@
       </ImageView>
       <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
+            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
          </image>
          <effect>
             <Bloom />
