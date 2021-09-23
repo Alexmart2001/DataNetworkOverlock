@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
 
     <children>
-        <Pane layoutX="125.0" layoutY="85.0" pickOnBounds="false" prefHeight="400" prefWidth="650.0" style="-fx-background-color: #222426;">
+        <Pane layoutX="125.0" layoutY="85.0" pickOnBounds="false" prefHeight="428.0" prefWidth="650.0" style="-fx-background-color: #222426;">
             <effect>
                 <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
@@ -19,12 +19,12 @@
                 </Lighting>
             </effect>
             <children>
-                <Label layoutX="100.0" layoutY="42.0" text="Nombre" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="50.0" text="Nombre" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_Nombre" layoutX="100.0" layoutY="64.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
+                <TextField fx:id="Tf_Nombre" layoutX="56.0" layoutY="72.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -43,12 +43,12 @@
                       <Font size="15.0" />
                    </font>
                 </TextField>
-                <Label layoutX="100.0" layoutY="98.0" text="Apellido" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="104.0" text="Apellido" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_Apellido" layoutX="100.0" layoutY="120.0" prefHeight="25.0" prefWidth="450">
+                <TextField fx:id="Tf_Apellido" layoutX="56.0" layoutY="126.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -67,12 +67,12 @@
                       <Font size="15.0" />
                    </font>
                 </TextField>
-                <Label layoutX="100.0" layoutY="154.0" text="Correo electronico" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="156.0" text="Correo electronico" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_correo" layoutX="100.0" layoutY="176.0" prefHeight="25.0" prefWidth="450">
+                <TextField fx:id="Tf_correo" layoutX="56.0" layoutY="178.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -91,12 +91,12 @@
                       <Font size="15.0" />
                    </font>
                 </TextField>
-                <Label layoutX="100.0" layoutY="210.0" text="Nombre de usuario" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="210.0" text="Nombre de usuario" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_usuario" layoutX="100.0" layoutY="232.0" prefHeight="25.0" prefWidth="450">
+                <TextField fx:id="Tf_usuario" layoutX="56.0" layoutY="232.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -115,17 +115,17 @@
                       <Font size="15.0" />
                    </font>
                 </TextField>
-                <Label layoutX="100.0" layoutY="266.0" text="Contraseña" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="266.0" text="Contraseña" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="100.0" layoutY="325.0" text="Confirmar contraseña" textFill="WHITE">
+                <Label layoutX="56.0" layoutY="326.0" text="Confirmar contraseña" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="PF_Password" layoutX="100.0" layoutY="288.0" prefHeight="25.0" prefWidth="450">
+                <PasswordField fx:id="PF_Password" layoutX="56.0" layoutY="288.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -144,7 +144,7 @@
                       <Font size="15.0" />
                    </font>
                 </PasswordField>
-                <PasswordField fx:id="PR_Password_2" layoutX="100.0" layoutY="347.0" prefHeight="25.0" prefWidth="450">
+                <PasswordField fx:id="PR_Password_2" layoutX="56.0" layoutY="348.0" prefHeight="25.0" prefWidth="450">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
@@ -162,6 +162,11 @@
                       <Font size="15.0" />
                    </font>
                 </PasswordField>
+            <Label layoutX="517.0" layoutY="288.0" prefHeight="31.0" prefWidth="119.0" text="Contraseña debil" textFill="#ed2f2f">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
         <ImageView fitHeight="80.0" fitWidth="404.0" layoutX="248.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
@@ -169,7 +174,7 @@
                 <Image url="@../../../../../Iconos/iCON.png" />
             </image>
         </ImageView>
-        <Button fx:id="Btn_registrarse" layoutX="773.0" layoutY="493.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
+        <Button fx:id="Btn_registrarse" layoutX="785.0" layoutY="493.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
             <effect>
                 <Lighting diffuseConstant="0.55" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
