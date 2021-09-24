@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.UsuarioController">
    <children>
       <Label layoutX="76.0" layoutY="106.0" text="Nombre de Usuario" textFill="WHITE">
          <font>
@@ -33,14 +33,14 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
          </image>
          <effect>
             <Bloom />
          </effect></ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
          </image>
@@ -72,7 +72,15 @@
                </bumpInput>
             </Lighting>
          </effect></Button>
-      <Button layoutX="200.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;" text="Cerrar sesion" textFill="WHITE">
+      <Button layoutX="196.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;" text="Cerrar sesion" textFill="WHITE">
+         <effect>
+            <Lighting diffuseConstant="0.55" light="$null" specularExponent="15.0" surfaceScale="0.11">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect></Button>
+      <Button layoutX="300.0" layoutY="450.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #1C1B17;" text="regresar" textFill="WHITE">
          <effect>
             <Lighting diffuseConstant="0.55" light="$null" specularExponent="15.0" surfaceScale="0.11">
                <bumpInput>
