@@ -1,4 +1,37 @@
-package co.edu.usbbog.datanetworkoverlock.model;
+package co.edu.usbbog.datanetworkoverlock.controller.dao;
 
-public class RegistroCambiosDAOImpl {
+import co.edu.usbbog.datanetworkoverlock.model.RegistroCambiosDTO;
+
+import java.util.List;
+
+public class RegistroCambiosDAOImpl implements RegistroCambiosDAO {
+    @Override
+    public boolean create(RegistroCambiosDTO registro) {
+        return false;
+    }
+
+    @Override
+    public boolean edit(RegistroCambiosDTO registro) {
+        return false;
+    }
+
+    @Override
+    public boolean remove(Integer id_registro) {
+        return false;
+    }
+
+    @Override
+    public RegistroCambiosDTO find(Integer id_registro) {
+        return null;
+    }
+
+    @Override
+    public List<RegistroCambiosDTO> findAll() {
+        return null;
+    }
+
+    @Override
+    public int count() {
+        return 0;
+    }
 }

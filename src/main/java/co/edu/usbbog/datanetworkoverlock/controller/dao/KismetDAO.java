@@ -3,9 +3,10 @@ import co.edu.usbbog.datanetworkoverlock.model.KismetDTO;
 import java.util.List;
 
 public interface KismetDAO {
-    public boolean create();
-    public boolean edit();
-    public boolean remove();
-    public KismetDTO find ();
+    public boolean create(KismetDTO kismet);
+    public boolean edit(KismetDTO kismet);
+    public boolean remove(Integer id_analisis_kismet);
+    public KismetDTO find (Integer id_analisis_kismet);
     public List<KismetDTO> findAll();
+    public int count();
 }

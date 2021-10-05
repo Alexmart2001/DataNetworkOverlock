@@ -2,34 +2,43 @@ package co.edu.usbbog.datanetworkoverlock.model;
 
 public class PersonaDTO {
 
+    private String usuario;
     private String nombre;
     private String apellido;
+    private String clave;
     private String email;
-    private String usuario;
-    private String pwd;
 
-    public PersonaDTO(String nombre, String apellido, String email, String usuario, String pwd) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.usuario = usuario;
-        this.pwd = pwd;
-    }
-
-    public PersonaDTO(String nombre, String apellido, String email, String usuario) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.usuario = usuario;
-        this.pwd = "";
-    }
 
     public PersonaDTO() {
+        this.usuario = "";
         this.nombre = "";
         this.apellido = "";
+        this.clave = "";
         this.email = "";
-        this.usuario = "";
-        this.pwd = "";
+    }
+
+    public PersonaDTO(String usuario) {
+        this.usuario = usuario;
+        this.nombre = "";
+        this.apellido = "";
+        this.clave = "";
+        this.email = "";
+    }
+
+    public PersonaDTO(String usuario, String nombre, String apellido, String clave, String email) {
+        this.usuario = usuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.clave = clave;
+        this.email = email;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getNombre() {
@@ -48,6 +57,14 @@ public class PersonaDTO {
         this.apellido = apellido;
     }
 
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -55,30 +72,4 @@ public class PersonaDTO {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", usuario='" + usuario + '\'' +
-                '}';
-    }
-
 }

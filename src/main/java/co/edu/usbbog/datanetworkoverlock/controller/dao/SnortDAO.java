@@ -4,9 +4,10 @@ import co.edu.usbbog.datanetworkoverlock.model.SnortDTO;
 import java.util.List;
 
 public interface SnortDAO {
-    public boolean create();
-    public boolean edit();
-    public boolean remove();
-    public SnortDTO find ();
+    public boolean create(SnortDTO snort);
+    public boolean edit(SnortDTO snort);
+    public boolean remove(Integer id_analisis_snort);
+    public SnortDTO find (Integer id_analisis_snort);
     public List<SnortDTO> findAll();
+    public int count();
 }

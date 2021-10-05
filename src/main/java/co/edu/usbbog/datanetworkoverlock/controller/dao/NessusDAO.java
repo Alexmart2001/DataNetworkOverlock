@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface NessusDAO {
 
-    public boolean create();
-    public boolean edit();
-    public boolean remove();
-    public NessusDTO find ();
+    public boolean create(NessusDTO nessus);
+    public boolean edit(NessusDTO nessus);
+    public boolean remove(Integer id_analisis_nessus);
+    public NessusDTO find (Integer id_analisis_nessus);
     public List<NessusDTO> findAll();
+    public int count();
 }
