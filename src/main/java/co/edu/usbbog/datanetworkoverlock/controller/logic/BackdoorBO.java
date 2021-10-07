@@ -1,7 +1,9 @@
-package co.edu.usbbog.datanetworkoverlock.model;
+package co.edu.usbbog.datanetworkoverlock.controller.logic;
 
 import co.edu.usbbog.datanetworkoverlock.controller.dao.BackdoorDAO;
-import co.edu.usbbog.datanetworkoverlock.model.BackdoorDAOImpl;
+import co.edu.usbbog.datanetworkoverlock.controller.dao.BackdoorDAOImpl;
+import co.edu.usbbog.datanetworkoverlock.model.BackdoorDTO;
+import co.edu.usbbog.datanetworkoverlock.model.ReportesDTO;
 
 import java.util.Calendar;
 

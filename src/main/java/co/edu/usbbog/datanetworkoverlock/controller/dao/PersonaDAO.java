@@ -7,8 +7,8 @@ import java.util.List;
 public interface PersonaDAO {
     public boolean create(PersonaDTO persona);
     public boolean edit(PersonaDTO persona );
-    public boolean remove(Integer usuario);
-    public PersonaDTO find (Integer usuario);
+    public boolean remove(String usuario);
+    public PersonaDTO find (String usuario);
     public List<PersonaDTO> findAll();
     public int count();
 }
