@@ -23,10 +23,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+
         //PersonaBO personita = new PersonaBO();
-
-        //personita.crearPersona("MikelGonza","Mikel ","Gonzalez","Mikelnea","Mikelneanea@gmail.com");
-
+        //personita.eliminarPersona("MikelGonza");
     }
 
 

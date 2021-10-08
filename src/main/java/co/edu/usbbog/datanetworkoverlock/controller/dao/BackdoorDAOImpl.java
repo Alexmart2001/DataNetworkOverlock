@@ -26,12 +26,11 @@ public class BackdoorDAOImpl implements BackdoorDAO {
     public boolean create(BackdoorDTO backdoor) {
         try {
             String query = "INSERT INTO backdoor(id_backdoor, tipo_backdoor, descripcion, fecha, reporte) VALUES ("
-                    + backdoor.getIdBackdoor() + ","
-                    + backdoor.getTipoBackdoor() + ","
-                    + backdoor.getDescripcion() + ","
-                    + backdoor.getFecha() + ","
-                    + backdoor.getReporte().getIdReporte() +
-                    ");";
+                    + "'" + backdoor.getIdBackdoor() + "', "
+                    + "'" + backdoor.getTipoBackdoor() + "', "
+                    + "'" + backdoor.getDescripcion() + "', "
+                    + "'" + backdoor.getFecha() + "', "
+                    + "'" + backdoor.getReporte().getIdReporte() + "');";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -56,12 +55,12 @@ public class BackdoorDAOImpl implements BackdoorDAO {
     public boolean edit(BackdoorDTO idBackdoor) {
         try {
             String query = "UPDATE backdoor SET "
-                    + "id_backdoor = " + idBackdoor.getIdBackdoor() + ", "
-                    + "tipo_backdoor = " + idBackdoor.getTipoBackdoor() + ", "
-                    + "descripcion = " + idBackdoor.getDescripcion() + ", "
-                    + "fecha = " + idBackdoor.getFecha() + ", "
-                    + "reporte = " + idBackdoor.getReporte().getIdReporte()
-                    + " WHERE id_backdoor = " + idBackdoor.getIdBackdoor() + ";";
+                    + "id_backdoor = '" + idBackdoor.getIdBackdoor() + "', "
+                    + "tipo_backdoor = '" + idBackdoor.getTipoBackdoor() + "', "
+                    + "descripcion = '" + idBackdoor.getDescripcion() + "', "
+                    + "fecha = '" + idBackdoor.getFecha() + "', "
+                    + "reporte = '" + idBackdoor.getReporte().getIdReporte() + "' "
+                    + "WHERE id_backdoor = '" + idBackdoor.getIdBackdoor() + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -85,7 +84,7 @@ public class BackdoorDAOImpl implements BackdoorDAO {
     @Override
     public boolean remove(Integer idBackdoor) {
         try {
-            String query = "DELETE FROM backdoor WHERE id_backdoor = " + idBackdoor + ";";
+            String query = "DELETE FROM backdoor WHERE id_backdoor = '" + idBackdoor + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -112,7 +111,7 @@ public class BackdoorDAOImpl implements BackdoorDAO {
         ReportesDTO reportesDTO;
         ReportesDAO reportesDAO = new ReportesDAOImpl();
         try {
-            String query = "SELECT * FROM backdoor WHERE id_backdoor = " + idBackdoor + ";";
+            String query = "SELECT * FROM backdoor WHERE id_backdoor = '" + idBackdoor + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
