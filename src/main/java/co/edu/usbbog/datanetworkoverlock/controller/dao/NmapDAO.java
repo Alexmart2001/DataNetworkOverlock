@@ -5,10 +5,17 @@ import co.edu.usbbog.datanetworkoverlock.model.NmapDTO;
 import java.util.List;
 
 public interface NmapDAO {
+
     public boolean create(NmapDTO nmap);
+
     public boolean edit(NmapDTO nmap);
+
     public boolean remove(Integer id_analisis_nmap);
-    public NmapDTO find (Integer id_analisis_nmap);
+
+    public NmapDTO find(Integer id_analisis_nmap);
+
     public List<NmapDTO> findAll();
+
     public int count();
+
 }

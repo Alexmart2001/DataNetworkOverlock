@@ -12,7 +12,7 @@ public class BackdoorBO {
     private final BackdoorDAO backdoorDAO;
 
     public BackdoorBO(){
-        this.backdoorDAO = BackdoorDAOImpl();
+        this.backdoorDAO = new BackdoorDAOImpl();
     }
 
     public String crearBackdoor(Integer id_backdoor, String tipo_backdoor, String descripcion, Calendar fecha, ReportesDTO reporte ){

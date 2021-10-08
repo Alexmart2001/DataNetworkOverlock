@@ -5,6 +5,7 @@ import co.edu.usbbog.datanetworkoverlock.model.RegistroCambiosDTO;
 import java.util.List;
 
 public class RegistroCambiosDAOImpl implements RegistroCambiosDAO {
+
     @Override
     public boolean create(RegistroCambiosDTO registro) {
         return false;
@@ -34,4 +35,5 @@ public class RegistroCambiosDAOImpl implements RegistroCambiosDAO {
     public int count() {
         return 0;
     }
+
 }

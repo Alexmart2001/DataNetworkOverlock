@@ -4,58 +4,62 @@ import java.util.Calendar;
 
 public class ReportesDTO {
 
-    private Integer id_reporte;
-    private String nombre_reporte;
-    private String tipo_reporte;
+    private Integer idReporte;
+    private String nombreReporte;
+    private String tipoReporte;
     private String descripcion;
     private Calendar fecha;
 
+    public ReportesDTO() {
+
+    }
+
     public ReportesDTO(Calendar fecha) {
-        this.id_reporte = 0;
-        this.nombre_reporte = "";
-        this.tipo_reporte = "";
+        this.idReporte = 0;
+        this.nombreReporte = "";
+        this.tipoReporte = "";
         this.descripcion = "";
         this.fecha = fecha;
     }
 
-    public ReportesDTO(Integer id_reporte,Calendar fecha) {
-        this.id_reporte = id_reporte;
-        this.nombre_reporte = "";
-        this.tipo_reporte = "";
+    public ReportesDTO(Integer idReporte, Calendar fecha) {
+        this.idReporte = idReporte;
+        this.nombreReporte = "";
+        this.tipoReporte = "";
         this.descripcion = "";
         this.fecha = fecha;
     }
 
-    public ReportesDTO(Integer id_reporte, String nombre_reporte, String tipo_reporte, String descripcion, Calendar fecha) {
-        this.id_reporte = id_reporte;
-        this.nombre_reporte = nombre_reporte;
-        this.tipo_reporte = tipo_reporte;
+    public ReportesDTO(Integer idReporte, String nombreReporte, String tipoReporte, String descripcion, Calendar fecha) {
+        this.idReporte = idReporte;
+        this.nombreReporte = nombreReporte;
+        this.tipoReporte = tipoReporte;
         this.descripcion = descripcion;
         this.fecha = fecha;
     }
 
-    public Integer getId_reporte() {
-        return id_reporte;
+    public Integer getIdReporte() {
+        return idReporte;
     }
 
-    public void setId_reporte(Integer id_reporte) {
-        this.id_reporte = id_reporte;
+    public void setIdReporte(Integer idReporte) {
+        this.idReporte = idReporte;
     }
 
-    public String getNombre_reporte() {
-        return nombre_reporte;
+    public String getNombreReporte() {
+        return nombreReporte;
     }
 
-    public void setNombre_reporte(String nombre_reporte) {
-        this.nombre_reporte = nombre_reporte;
+    public void setNombreReporte(String nombreReporte) {
+        this.nombreReporte = nombreReporte;
     }
 
-    public String getTipo_reporte() {
-        return tipo_reporte;
+    public String getTipoReporte() {
+        return tipoReporte;
     }
 
-    public void setTipo_reporte(String tipo_reporte) {
-        this.tipo_reporte = tipo_reporte;
+    public void setTipoReporte(String tipoReporte) {
+        this.tipoReporte = tipoReporte;
     }
 
     public String getDescripcion() {
@@ -73,5 +77,6 @@ public class ReportesDTO {
     public void setFecha(Calendar fecha) {
         this.fecha = fecha;
     }
+
 }
 

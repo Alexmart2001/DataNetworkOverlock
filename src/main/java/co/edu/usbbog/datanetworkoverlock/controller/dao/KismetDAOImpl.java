@@ -5,6 +5,7 @@ import co.edu.usbbog.datanetworkoverlock.model.KismetDTO;
 import java.util.List;
 
 public class KismetDAOImpl implements KismetDAO{
+
     @Override
     public boolean create(KismetDTO kismet) {
         return false;
@@ -34,4 +35,5 @@ public class KismetDAOImpl implements KismetDAO{
     public int count() {
         return 0;
     }
+
 }

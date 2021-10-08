@@ -4,50 +4,50 @@ import java.util.Calendar;
 
 public class RegistroCambiosDTO {
 
-    private Integer id_registro;
+    private Integer idRegistro;
     private String descripcion;
     private Calendar fecha;
     private PersonaDTO usuario;
     private ReportesDTO reporte;
 
     public RegistroCambiosDTO(Calendar fecha) {
-        this.id_registro = 0;
+        this.idRegistro = 0;
         this.descripcion = "";
         this.fecha = fecha;
         this.usuario = new PersonaDTO();
         this.reporte = new ReportesDTO();
     }
 
-    public RegistroCambiosDTO(Integer id_registro, Calendar fecha) {
-        this.id_registro = id_registro;
+    public RegistroCambiosDTO(Integer idRegistro, Calendar fecha) {
+        this.idRegistro = idRegistro;
         this.descripcion = "";
         this.fecha = fecha;
         this.usuario = new PersonaDTO();
         this.reporte = new ReportesDTO();
     }
 
-    public RegistroCambiosDTO(Integer id_registro, String descripcion, Calendar fecha) {
-        this.id_registro = id_registro;
+    public RegistroCambiosDTO(Integer idRegistro, String descripcion, Calendar fecha) {
+        this.idRegistro = idRegistro;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.usuario = new PersonaDTO();
         this.reporte = new ReportesDTO();
     }
 
-    public RegistroCambiosDTO(Integer id_registro, String descripcion, Calendar fecha, PersonaDTO usuario, ReportesDTO reporte) {
-        this.id_registro = id_registro;
+    public RegistroCambiosDTO(Integer idRegistro, String descripcion, Calendar fecha, PersonaDTO usuario, ReportesDTO reporte) {
+        this.idRegistro = idRegistro;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.usuario = usuario;
         this.reporte = reporte;
     }
 
-    public Integer getId_registro() {
-        return id_registro;
+    public Integer getIdRegistro() {
+        return idRegistro;
     }
 
-    public void setId_registro(Integer id_registro) {
-        this.id_registro = id_registro;
+    public void setIdRegistro(Integer idRegistro) {
+        this.idRegistro = idRegistro;
     }
 
     public String getDescripcion() {
@@ -81,4 +81,5 @@ public class RegistroCambiosDTO {
     public void setReporte(ReportesDTO reporte) {
         this.reporte = reporte;
     }
+
 }

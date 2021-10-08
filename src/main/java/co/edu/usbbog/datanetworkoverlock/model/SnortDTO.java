@@ -3,7 +3,8 @@ package co.edu.usbbog.datanetworkoverlock.model;
 import java.util.Calendar;
 
 public class SnortDTO {
-    private Integer id_analisis_snort;
+
+    private Integer idAnalisisSnort;
     private Calendar fecha;
     private Calendar hora;
     private String prioridad;
@@ -12,7 +13,7 @@ public class SnortDTO {
     private IntrusionesDTO intrusiones;
 
     public SnortDTO(Calendar fecha, Calendar hora) {
-        this.id_analisis_snort = 0;
+        this.idAnalisisSnort = 0;
         this.fecha = fecha;
         this.hora = hora;
         this.prioridad = "";
@@ -21,8 +22,8 @@ public class SnortDTO {
         this.intrusiones = new IntrusionesDTO();
     }
 
-    public SnortDTO(Integer id_analisis_snort, Calendar fecha, Calendar hora) {
-        this.id_analisis_snort = id_analisis_snort;
+    public SnortDTO(Integer idAnalisisSnort, Calendar fecha, Calendar hora) {
+        this.idAnalisisSnort = idAnalisisSnort;
         this.fecha = fecha;
         this.hora = hora;
         this.prioridad = "";
@@ -31,8 +32,8 @@ public class SnortDTO {
         this.intrusiones = new IntrusionesDTO();
     }
 
-    public SnortDTO(Integer id_analisis_snort, Calendar fecha, Calendar hora, String prioridad, String nombre_host, String mensaje) {
-        this.id_analisis_snort = id_analisis_snort;
+    public SnortDTO(Integer idAnalisisSnort, Calendar fecha, Calendar hora, String prioridad, String nombre_host, String mensaje) {
+        this.idAnalisisSnort = idAnalisisSnort;
         this.fecha = fecha;
         this.hora = hora;
         this.prioridad = prioridad;
@@ -41,8 +42,8 @@ public class SnortDTO {
         this.intrusiones = new IntrusionesDTO();
     }
 
-    public SnortDTO(Integer id_analisis_snort, Calendar fecha, Calendar hora, String prioridad, String nombre_host, String mensaje, IntrusionesDTO intrusiones) {
-        this.id_analisis_snort = id_analisis_snort;
+    public SnortDTO(Integer idAnalisisSnort, Calendar fecha, Calendar hora, String prioridad, String nombre_host, String mensaje, IntrusionesDTO intrusiones) {
+        this.idAnalisisSnort = idAnalisisSnort;
         this.fecha = fecha;
         this.hora = hora;
         this.prioridad = prioridad;
@@ -51,12 +52,12 @@ public class SnortDTO {
         this.intrusiones = intrusiones;
     }
 
-    public Integer getId_analisis_snort() {
-        return id_analisis_snort;
+    public Integer getIdAnalisisSnort() {
+        return idAnalisisSnort;
     }
 
-    public void setId_analisis_snort(Integer id_analisis_snort) {
-        this.id_analisis_snort = id_analisis_snort;
+    public void setIdAnalisisSnort(Integer idAnalisisSnort) {
+        this.idAnalisisSnort = idAnalisisSnort;
     }
 
     public Calendar getFecha() {
@@ -106,4 +107,5 @@ public class SnortDTO {
     public void setIntrusiones(IntrusionesDTO intrusiones) {
         this.intrusiones = intrusiones;
     }
+
 }

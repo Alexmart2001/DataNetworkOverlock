@@ -2,53 +2,53 @@ package co.edu.usbbog.datanetworkoverlock.model;
 
 public class IntrusionesDTO {
 
-    private Integer id_intrusion;
-    private String unidades_afectadas;
+    private Integer idIntrusion;
+    private String unidadesAfectadas;
     private Integer ataques;
     private ReportesDTO reporte;
 
     public IntrusionesDTO() {
-        this.id_intrusion = 0;
-        this.unidades_afectadas = "";
+        this.idIntrusion = 0;
+        this.unidadesAfectadas = "";
         this.ataques = 0;
         this.reporte = new ReportesDTO();
     }
 
-    public IntrusionesDTO(Integer id_intrusion) {
-        this.id_intrusion = id_intrusion;
-        this.unidades_afectadas = "";
+    public IntrusionesDTO(Integer idIntrusion) {
+        this.idIntrusion = idIntrusion;
+        this.unidadesAfectadas = "";
         this.ataques = 0;
         this.reporte = new ReportesDTO();
     }
 
-    public IntrusionesDTO(Integer id_intrusion, String unidades_afectadas, Integer ataques) {
-        this.id_intrusion = id_intrusion;
-        this.unidades_afectadas = unidades_afectadas;
+    public IntrusionesDTO(Integer idIntrusion, String unidadesAfectadas, Integer ataques) {
+        this.idIntrusion = idIntrusion;
+        this.unidadesAfectadas = unidadesAfectadas;
         this.ataques = ataques;
         this.reporte = new ReportesDTO();
     }
 
-    public IntrusionesDTO(Integer id_intrusion, String unidades_afectadas, Integer ataques, ReportesDTO reporte) {
-        this.id_intrusion = id_intrusion;
-        this.unidades_afectadas = unidades_afectadas;
+    public IntrusionesDTO(Integer idIntrusion, String unidadesAfectadas, Integer ataques, ReportesDTO reporte) {
+        this.idIntrusion = idIntrusion;
+        this.unidadesAfectadas = unidadesAfectadas;
         this.ataques = ataques;
         this.reporte = reporte;
     }
 
-    public Integer getId_intrusion() {
-        return id_intrusion;
+    public Integer getIdIntrusion() {
+        return idIntrusion;
     }
 
-    public void setId_intrusion(Integer id_intrusion) {
-        this.id_intrusion = id_intrusion;
+    public void setIdIntrusion(Integer idIntrusion) {
+        this.idIntrusion = idIntrusion;
     }
 
-    public String getUnidades_afectadas() {
-        return unidades_afectadas;
+    public String getUnidadesAfectadas() {
+        return unidadesAfectadas;
     }
 
-    public void setUnidades_afectadas(String unidades_afectadas) {
-        this.unidades_afectadas = unidades_afectadas;
+    public void setUnidadesAfectadas(String unidadesAfectadas) {
+        this.unidadesAfectadas = unidadesAfectadas;
     }
 
     public Integer getAtaques() {
@@ -66,4 +66,5 @@ public class IntrusionesDTO {
     public void setReporte(ReportesDTO reporte) {
         this.reporte = reporte;
     }
+
 }

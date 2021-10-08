@@ -4,59 +4,63 @@ import java.util.Calendar;
 
 public class BackdoorDTO {
 
-     private Integer id_backdoor;
-     private String tipo_backdoor;
+     private Integer idBackdoor;
+     private String tipoBackdoor;
      private String descripcion;
      private Calendar fecha;
      // relacion
      private ReportesDTO reporte;
 
+     public BackdoorDTO() {
+
+     }
+
     public BackdoorDTO(Calendar fecha) {
-        this.id_backdoor = 0;
-        this.tipo_backdoor = "";
+        this.idBackdoor = 0;
+        this.tipoBackdoor = "";
         this.descripcion = "";
         this.fecha = fecha;
         this.reporte = new ReportesDTO();
     }
 
-    public BackdoorDTO(Integer id_backdoor, Calendar fecha) {
-        this.id_backdoor = id_backdoor;
-        this.tipo_backdoor = "";
+    public BackdoorDTO(Integer idBackdoor, Calendar fecha) {
+        this.idBackdoor = idBackdoor;
+        this.tipoBackdoor = "";
         this.descripcion = "";
         this.fecha = fecha;
         this.reporte = new ReportesDTO();
     }
 
-    public BackdoorDTO(Integer id_backdoor, String tipo_backdoor, String descripcion, Calendar fecha) {
-        this.id_backdoor = id_backdoor;
-        this.tipo_backdoor = tipo_backdoor;
+    public BackdoorDTO(Integer idBackdoor, String tipoBackdoor, String descripcion, Calendar fecha) {
+        this.idBackdoor = idBackdoor;
+        this.tipoBackdoor = tipoBackdoor;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.reporte = new ReportesDTO();
     }
 
-    public BackdoorDTO(Integer id_backdoor, String tipo_backdoor, String descripcion, Calendar fecha, ReportesDTO reporte) {
-        this.id_backdoor = id_backdoor;
-        this.tipo_backdoor = tipo_backdoor;
+    public BackdoorDTO(Integer idBackdoor, String tipoBackdoor, String descripcion, Calendar fecha, ReportesDTO reporte) {
+        this.idBackdoor = idBackdoor;
+        this.tipoBackdoor = tipoBackdoor;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.reporte = reporte;
     }
 
-    public Integer getId_backdoor() {
-        return id_backdoor;
+    public Integer getIdBackdoor() {
+        return idBackdoor;
     }
 
-    public void setId_backdoor(Integer id_backdoor) {
-        this.id_backdoor = id_backdoor;
+    public void setIdBackdoor(Integer idBackdoor) {
+        this.idBackdoor = idBackdoor;
     }
 
-    public String getTipo_backdoor() {
-        return tipo_backdoor;
+    public String getTipoBackdoor() {
+        return tipoBackdoor;
     }
 
-    public void setTipo_backdoor(String tipo_backdoor) {
-        this.tipo_backdoor = tipo_backdoor;
+    public void setTipoBackdoor(String tipoBackdoor) {
+        this.tipoBackdoor = tipoBackdoor;
     }
 
     public String getDescripcion() {
@@ -82,7 +86,5 @@ public class BackdoorDTO {
     public void setReporte(ReportesDTO reporte) {
         this.reporte = reporte;
     }
-
-
 
 }

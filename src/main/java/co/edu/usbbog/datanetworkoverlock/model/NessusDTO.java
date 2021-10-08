@@ -1,90 +1,91 @@
 package co.edu.usbbog.datanetworkoverlock.model;
 
 public class NessusDTO {
-    private Integer id_analisis_nessus;
+
+    private Integer idAnalisisNessus;
     private Integer ip;
     private Integer puerto;
-    private Integer host_number;
+    private Integer hostNumber;
     private String descripcion;
     private String solucion;
-    private String nombre_dns;
-    private String nombre_netbios;
-    private String direccion_mac;
+    private String nombreDNS;
+    private String nombreNetbios;
+    private String direccionMac;
     private String nist;
-    private String base_score;
+    private String baseScore;
     private String vector;
     private BusquedaVulnerabilidadesDTO busqueda;
 
     public NessusDTO() {
-        this.id_analisis_nessus = 0;
+        this.idAnalisisNessus = 0;
         this.ip = 0;
         this.puerto = 0;
-        this.host_number = 0;
+        this.hostNumber = 0;
         this.descripcion = "";
         this.solucion = "";
-        this.nombre_dns = "";
-        this.nombre_netbios = "";
-        this.direccion_mac = "";
+        this.nombreDNS = "";
+        this.nombreNetbios = "";
+        this.direccionMac = "";
         this.nist = "";
-        this.base_score = "";
+        this.baseScore = "";
         this.vector = "";
         this.busqueda = new BusquedaVulnerabilidadesDTO();
     }
 
-    public NessusDTO(Integer id_analisis_nessus) {
-        this.id_analisis_nessus = id_analisis_nessus;
+    public NessusDTO(Integer idAnalisisNessus) {
+        this.idAnalisisNessus = idAnalisisNessus;
         this.ip = 0;
         this.puerto = 0;
-        this.host_number = 0;
+        this.hostNumber = 0;
         this.descripcion = "";
         this.solucion = "";
-        this.nombre_dns = "";
-        this.nombre_netbios = "";
-        this.direccion_mac = "";
+        this.nombreDNS = "";
+        this.nombreNetbios = "";
+        this.direccionMac = "";
         this.nist = "";
-        this.base_score = "";
+        this.baseScore = "";
         this.vector = "";
         this.busqueda = new BusquedaVulnerabilidadesDTO();
     }
 
-    public NessusDTO(Integer id_analisis_nessus, Integer ip, Integer puerto, Integer host_number, String descripcion, String solucion, String nombre_dns, String nombre_netbios, String direccion_mac, String nist, String base_score, String vector) {
-        this.id_analisis_nessus = id_analisis_nessus;
+    public NessusDTO(Integer idAnalisisNessus, Integer ip, Integer puerto, Integer hostNumber, String descripcion, String solucion, String nombreDNS, String nombreNetbios, String direccionMac, String nist, String baseScore, String vector) {
+        this.idAnalisisNessus = idAnalisisNessus;
         this.ip = ip;
         this.puerto = puerto;
-        this.host_number = host_number;
+        this.hostNumber = hostNumber;
         this.descripcion = descripcion;
         this.solucion = solucion;
-        this.nombre_dns = nombre_dns;
-        this.nombre_netbios = nombre_netbios;
-        this.direccion_mac = direccion_mac;
+        this.nombreDNS = nombreDNS;
+        this.nombreNetbios = nombreNetbios;
+        this.direccionMac = direccionMac;
         this.nist = nist;
-        this.base_score = base_score;
+        this.baseScore = baseScore;
         this.vector = vector;
         this.busqueda = new BusquedaVulnerabilidadesDTO();
     }
 
-    public NessusDTO(Integer id_analisis_nessus, Integer ip, Integer puerto, Integer host_number, String descripcion, String solucion, String nombre_dns, String nombre_netbios, String direccion_mac, String nist, String base_score, String vector, BusquedaVulnerabilidadesDTO busqueda) {
-        this.id_analisis_nessus = id_analisis_nessus;
+    public NessusDTO(Integer idAnalisisNessus, Integer ip, Integer puerto, Integer hostNumber, String descripcion, String solucion, String nombreDNS, String nombreNetbios, String direccionMac, String nist, String baseScore, String vector, BusquedaVulnerabilidadesDTO busqueda) {
+        this.idAnalisisNessus = idAnalisisNessus;
         this.ip = ip;
         this.puerto = puerto;
-        this.host_number = host_number;
+        this.hostNumber = hostNumber;
         this.descripcion = descripcion;
         this.solucion = solucion;
-        this.nombre_dns = nombre_dns;
-        this.nombre_netbios = nombre_netbios;
-        this.direccion_mac = direccion_mac;
+        this.nombreDNS = nombreDNS;
+        this.nombreNetbios = nombreNetbios;
+        this.direccionMac = direccionMac;
         this.nist = nist;
-        this.base_score = base_score;
+        this.baseScore = baseScore;
         this.vector = vector;
         this.busqueda = busqueda;
     }
 
-    public Integer getId_analisis_nessus() {
-        return id_analisis_nessus;
+    public Integer getIdAnalisisNessus() {
+        return idAnalisisNessus;
     }
 
-    public void setId_analisis_nessus(Integer id_analisis_nessus) {
-        this.id_analisis_nessus = id_analisis_nessus;
+    public void setIdAnalisisNessus(Integer idAnalisisNessus) {
+        this.idAnalisisNessus = idAnalisisNessus;
     }
 
     public Integer getIp() {
@@ -103,12 +104,12 @@ public class NessusDTO {
         this.puerto = puerto;
     }
 
-    public Integer getHost_number() {
-        return host_number;
+    public Integer getHostNumber() {
+        return hostNumber;
     }
 
-    public void setHost_number(Integer host_number) {
-        this.host_number = host_number;
+    public void setHostNumber(Integer hostNumber) {
+        this.hostNumber = hostNumber;
     }
 
     public String getDescripcion() {
@@ -127,28 +128,28 @@ public class NessusDTO {
         this.solucion = solucion;
     }
 
-    public String getNombre_dns() {
-        return nombre_dns;
+    public String getNombreDNS() {
+        return nombreDNS;
     }
 
-    public void setNombre_dns(String nombre_dns) {
-        this.nombre_dns = nombre_dns;
+    public void setNombreDNS(String nombreDNS) {
+        this.nombreDNS = nombreDNS;
     }
 
-    public String getNombre_netbios() {
-        return nombre_netbios;
+    public String getNombreNetbios() {
+        return nombreNetbios;
     }
 
-    public void setNombre_netbios(String nombre_netbios) {
-        this.nombre_netbios = nombre_netbios;
+    public void setNombreNetbios(String nombreNetbios) {
+        this.nombreNetbios = nombreNetbios;
     }
 
-    public String getDireccion_mac() {
-        return direccion_mac;
+    public String getDireccionMac() {
+        return direccionMac;
     }
 
-    public void setDireccion_mac(String direccion_mac) {
-        this.direccion_mac = direccion_mac;
+    public void setDireccionMac(String direccionMac) {
+        this.direccionMac = direccionMac;
     }
 
     public String getNist() {
@@ -159,12 +160,12 @@ public class NessusDTO {
         this.nist = nist;
     }
 
-    public String getBase_score() {
-        return base_score;
+    public String getBaseScore() {
+        return baseScore;
     }
 
-    public void setBase_score(String base_score) {
-        this.base_score = base_score;
+    public void setBaseScore(String baseScore) {
+        this.baseScore = baseScore;
     }
 
     public String getVector() {
@@ -182,6 +183,5 @@ public class NessusDTO {
     public void setBusqueda(BusquedaVulnerabilidadesDTO busqueda) {
         this.busqueda = busqueda;
     }
-
 
 }

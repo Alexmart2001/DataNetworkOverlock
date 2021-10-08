@@ -16,12 +16,10 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     public PersonaDAOImpl(){
         this.conexion = new Conexion();
-
     }
 
     @Override
     public boolean create(PersonaDTO persona) {
-        boolean seHizo = false;
         try{
             String query = "INSERT INTO persona(usuario, nombre, apellido, clave, correo)"
                     + "VALUES ("
@@ -29,7 +27,7 @@ public class PersonaDAOImpl implements PersonaDAO {
                     +"'" + persona.getNombre() + "',"
                     +"'" + persona.getApellido() + "',"
                     +"'" + persona.getClave() + "',"
-                    +"'" + persona.getEmail() + ");";
+                    +"'" + persona.getEmail() + "');";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -37,31 +35,28 @@ public class PersonaDAOImpl implements PersonaDAO {
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se inserto el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se inserto el dato");
+            System.out.println("No se inserto el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se inserto el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
     @Override
-    public boolean edit(PersonaDTO persona) {
+    public boolean edit(PersonaDTO usuario) {
         try {
             String query = "UPDATE persona SET"
-                    + "usuario = '" + persona.getUsuario() + "',"
-                    + "nombre = '" + persona.getNombre() + "',"
-                    + "apellido = '" + persona.getApellido() + "',"
-                    + "clave = '" + persona.getClave() + "',"
-                    + "correo = '" + persona.getEmail() + "',"
-                    + ";";
+                    + "nombre = '" + usuario.getNombre() + "',"
+                    + "apellido = '" + usuario.getApellido() + "',"
+                    + "clave = '" + usuario.getClave() + "',"
+                    + "correo = '" + usuario.getEmail() + "'"
+                    + "WHERE usuario = '" + usuario.getUsuario() + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -70,6 +65,10 @@ public class PersonaDAOImpl implements PersonaDAO {
             this.conexion.desconectar();
             System.out.println("Se modifico el dato");
             return true;
+        } catch (SQLTimeoutException e) {
+            System.out.println("No se modificó el dato, tiempo de espera agotado");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
             System.out.println("Error al modificar el dato");
             System.out.println("Error: " + e.getMessage());
@@ -80,7 +79,6 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     @Override
     public boolean remove(String usuario) {
-        boolean seHizo = false;
         try{
             String query = "DELETE FROM persona where usuario = " + usuario + ";";
             System.out.println(query);
@@ -90,25 +88,23 @@ public class PersonaDAOImpl implements PersonaDAO {
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se elimino el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se elimino el dato");
+            System.out.println("No se elimino el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se elimino el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
 
     @Override
     public PersonaDTO find(String usuario) {
-        PersonaDTO persona = null;
+        PersonaDTO persona;
         try{
             String query = "SELECT * FROM persona WHERE usuario = "+ usuario + ";";
             System.out.println(query);
@@ -126,59 +122,58 @@ public class PersonaDAOImpl implements PersonaDAO {
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se obtuvo el dato");
+            return persona;
         } catch (SQLTimeoutException e) {
-            persona = null;
-            System.out.println("No se obtuvo el dato");
+            System.out.println("No se obtuvo el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            persona = null;
             System.out.println("No se obtuvo el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return persona;
+        return null;
     }
 
     @Override
     public List<PersonaDTO> findAll() {
-        List<PersonaDTO> persona = new ArrayList<>();
-        PersonaDTO personaa = null;
+        List<PersonaDTO> personas = new ArrayList<>();
+        PersonaDTO persona;
         try{
-            String query = "SELECT*FROM persona;";
+            String query = "SELECT * FROM persona;";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                personaa = new PersonaDTO(
+                persona = new PersonaDTO(
                         rs.getString("usuario"),
                         rs.getString("nombre"),
                         rs.getString("Apellido"),
                         rs.getString("clave"),
                         rs.getString("correo"));
-                        persona.add(personaa);
+                        personas.add(persona);
             }
             rs.close();
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se obtuvieron los datos");
+            return personas;
         } catch (SQLTimeoutException e) {
-            persona = new ArrayList<>();
-            System.out.println("No se obtuvieron los datos");
+            System.out.println("No se obtuvieron los datos, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            persona = new ArrayList<>();
             System.out.println("No se obtuvieron los datos");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return persona;
+        return null;
     }
 
     @Override
     public int count() {
         return findAll().size();
     }
+
 }

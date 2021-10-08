@@ -14,7 +14,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("registro.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
@@ -22,10 +22,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        //launch();
-        PersonaBO personita = new PersonaBO();
+        launch();
+        //PersonaBO personita = new PersonaBO();
 
-        personita.crearPersona("MikelGonza","Mikel ","Gonzalez","Mikelnea","Mikelneanea@gmail.com");
+        //personita.crearPersona("MikelGonza","Mikel ","Gonzalez","Mikelnea","Mikelneanea@gmail.com");
 
     }
 

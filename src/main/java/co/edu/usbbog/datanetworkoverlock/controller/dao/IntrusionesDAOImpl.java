@@ -20,15 +20,14 @@ public class IntrusionesDAOImpl implements IntrusionesDAO {
     }
 
     @Override
-    public boolean create(IntrusionesDTO intrusiones) {
-        boolean seHizo = false;
+    public boolean create(IntrusionesDTO intrusion) {
         try {
             String query = "INSERT INTO intrusiones (id_intrusion, unidades_afectadas, ataques, reporte)"
                     + "VALUES ("
-                    + intrusiones.getId_intrusion() + ","
-                    + "'" + intrusiones.getUnidades_afectadas() + "',"
-                    + intrusiones.getAtaques() + ","
-                    + intrusiones.getReporte().getId_reporte()
+                    + intrusion.getIdIntrusion() + ","
+                    + "'" + intrusion.getUnidadesAfectadas() + "',"
+                    + intrusion.getAtaques() + ","
+                    + intrusion.getReporte().getIdReporte()
                     + ");";
             System.out.println(query);
             this.conexion.conectar();
@@ -37,30 +36,28 @@ public class IntrusionesDAOImpl implements IntrusionesDAO {
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se inserto el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se inserto el dato");
+            System.out.println("No se inserto el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se inserto el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
     @Override
-    public boolean edit(IntrusionesDTO intrusiones) {
+    public boolean edit(IntrusionesDTO idintrusion) {
         try {
             String query = "UPDATE intrusiones SET "
-                    + "id_intrusion = " + intrusiones.getId_intrusion() + ","
-                    + "unidades_afectadas = '" + intrusiones.getId_intrusion() + "',"
-                    + "ataques = " + intrusiones.getAtaques()
-                    + "reporte = " + intrusiones.getReporte().getId_reporte()
-                    + " WHERE id_intrusion = " + intrusiones.getId_intrusion() + ";";
+                    + "id_intrusion = " + idintrusion.getIdIntrusion() + ","
+                    + "unidades_afectadas = '" + idintrusion.getIdIntrusion() + "',"
+                    + "ataques = " + idintrusion.getAtaques()
+                    + "reporte = " + idintrusion.getReporte().getIdReporte()
+                    + " WHERE id_intrusion = " + idintrusion.getIdIntrusion() + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -69,20 +66,22 @@ public class IntrusionesDAOImpl implements IntrusionesDAO {
             this.conexion.desconectar();
             System.out.println("Se modifico el dato");
             return true;
+        } catch (SQLTimeoutException e) {
+            System.out.println("No se modificó el dato, tiempo de espera agotado");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
             System.out.println("Error al modificar el dato");
             System.out.println("Error: " + e.getMessage());
             System.out.println("SQLState: " + e.getSQLState());
         }
         return false;
-
     }
 
     @Override
-    public boolean remove(Integer id_intrusion) {
-        boolean seHizo = false;
+    public boolean remove(Integer idIntrusion) {
         try {
-            String query = "DELETE FROM intrusiones WHERE id_intrusion = " + id_intrusion + ";";
+            String query = "DELETE FROM intrusiones WHERE id_intrusion = " + idIntrusion + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -90,63 +89,60 @@ public class IntrusionesDAOImpl implements IntrusionesDAO {
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se elimino el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se elimino el dato");
+            System.out.println("No se eliminó el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se elimino el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
     @Override
-    public IntrusionesDTO find(Integer id_intrusion) {
-        IntrusionesDTO intrusion = null;
-        ReportesDTO reporte;
-        ReportesDAO reportedao = new ReportesDAOImpl();
+    public IntrusionesDTO find(Integer idIntrusion) {
+        IntrusionesDTO intrusion;
+        ReportesDTO reportesDTO;
+        ReportesDAO reportesDAO = new ReportesDAOImpl();
         try {
-            String query = "SELECT * FROM intrusiones WHERE id_intrusion = " + id_intrusion + ";";
+            String query = "SELECT * FROM intrusiones WHERE id_intrusion = " + idIntrusion + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(query);
             rs.first();
-            reporte = reportedao.find(rs.getInt("reporte"));
+            reportesDTO = reportesDAO.find(rs.getInt("reporte"));
             intrusion = new IntrusionesDTO(
                     rs.getInt("id_intrusion"),
                     rs.getString("unidades_afectadas"),
                     rs.getInt("ataques"),
-                    reporte);
+                    reportesDTO);
             rs.close();
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se obtuvo el dato");
+            return intrusion;
         } catch (SQLTimeoutException e) {
-            intrusion = null;
-            System.out.println("No se obtuvo el dato");
+            System.out.println("No se encontró el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            intrusion = null;
             System.out.println("No se obtuvo el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return intrusion;
+        return null;
     }
 
     @Override
     public List<IntrusionesDTO> findAll() {
-        List<IntrusionesDTO> intrusioness = new ArrayList<>();
-        IntrusionesDTO intrusion = null;
-        ReportesDTO reporte;
-        ReportesDAO reportedao = new ReportesDAOImpl();
+        List<IntrusionesDTO> intrusiones = new ArrayList<>();
+        IntrusionesDTO intrusion;
+        ReportesDTO reportesDTO;
+        ReportesDAO reportesDAO = new ReportesDAOImpl();
         try {
             String query = "SELECT * FROM intrusiones;";
             System.out.println(query);
@@ -154,34 +150,34 @@ public class IntrusionesDAOImpl implements IntrusionesDAO {
             Statement stmt = this.conexion.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                reporte = reportedao.find(rs.getInt("reporte"));
+                reportesDTO = reportesDAO.find(rs.getInt("reporte"));
                 intrusion = new IntrusionesDTO(
                         rs.getInt("id_intrusion"),
                         rs.getString("unidades_afectadas"),
                         rs.getInt("ataques"),
-                        reporte);
-                intrusioness.add(intrusion);
+                        reportesDTO);
+                intrusiones.add(intrusion);
             }
             rs.close();
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se obtuvieron los empleados");
+            return intrusiones;
         } catch (SQLTimeoutException e) {
-            intrusioness = new ArrayList<>();
-            System.out.println("No se obtuvieron los empleados");
+            System.out.println("No se encontró ningún dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            intrusioness = new ArrayList<>();
             System.out.println("No se obtuvieron los empleados");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return intrusioness;
+        return null;
     }
 
     @Override
     public int count() {
         return findAll().size();
     }
+
 }

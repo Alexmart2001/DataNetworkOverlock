@@ -13,28 +13,27 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidadesDAO{
+public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidadesDAO {
 
     private final Conexion conexion;
 
-    public BusquedaVulnerabilidadesDAOImpl(){
+    public BusquedaVulnerabilidadesDAOImpl() {
         this.conexion = new Conexion();
     }
 
     @Override
-    public boolean create(BusquedaVulnerabilidadesDTO busqueda) {
-        boolean seHizo = false;
-        try{
+    public boolean create(BusquedaVulnerabilidadesDTO resultado) {
+        try {
             String query = "INSERT INTO (id_busqueda, descripcion, fecha, codigo_cve, base_score,vector,reporte ) "
                     + " VALUES ("
-                    + busqueda.getId_busqueda() + ","
-                    + "'" + busqueda.getDescripcion() + "',"
-                    + "'" + busqueda.getFecha() + "',"
-                    + "'" + busqueda.getFecha() + "',"
-                    + "'" + busqueda.getCodigo_cve() + "',"
-                    + "'" + busqueda.getBase_score() + "',"
-                    + "'" + busqueda.getVector() + "',"
-                    + busqueda.getReporte().getId_reporte()
+                    + resultado.getIdBusqueda() + ","
+                    + "'" + resultado.getDescripcion() + "',"
+                    + "'" + resultado.getFecha() + "',"
+                    + "'" + resultado.getFecha() + "',"
+                    + "'" + resultado.getCodigoCVE() + "',"
+                    + "'" + resultado.getBaseScore() + "',"
+                    + "'" + resultado.getVector() + "',"
+                    + resultado.getReporte().getIdReporte()
                     + ");";
             System.out.println(query);
             this.conexion.conectar();
@@ -43,33 +42,31 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se inserto el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se inserto el dato");
+            System.out.println("No se inserto el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se inserto el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
     @Override
-    public boolean edit(BusquedaVulnerabilidadesDTO busqueda) {
+    public boolean edit(BusquedaVulnerabilidadesDTO idBusqueda) {
         try {
             String query = "UPDATE busqueda_vulnerabilidades SET "
-                    + "id_busqueda = " + busqueda.getId_busqueda() + ","
-                    + "descripcion = '" + busqueda.getDescripcion() + "',"
-                    + "fecha = '" + busqueda.getFecha() + "',"
-                    + "codigo_cve = '" +  busqueda.getCodigo_cve() + "',"
-                    + "base_score = '" + busqueda.getBase_score() + "',"
-                    + "vector = '" + busqueda.getVector() + "',"
-                    + "reporte = " + busqueda.getReporte().getId_reporte()
-                    + "WHERE id_busqueda = " + busqueda.getId_busqueda() + ";";
+                    + "id_busqueda = " + idBusqueda.getIdBusqueda() + ","
+                    + "descripcion = '" + idBusqueda.getDescripcion() + "',"
+                    + "fecha = '" + idBusqueda.getFecha() + "',"
+                    + "codigo_cve = '" + idBusqueda.getCodigoCVE() + "',"
+                    + "base_score = '" + idBusqueda.getBaseScore() + "',"
+                    + "vector = '" + idBusqueda.getVector() + "',"
+                    + "reporte = " + idBusqueda.getReporte().getIdReporte()
+                    + "WHERE id_busqueda = " + idBusqueda.getIdBusqueda() + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -78,6 +75,10 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
             this.conexion.desconectar();
             System.out.println("Se modifico el dato");
             return true;
+        } catch (SQLTimeoutException e) {
+            System.out.println("No se modificó el dato, tiempo de espera agotado");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
             System.out.println("Error al modificar el dato");
             System.out.println("Error: " + e.getMessage());
@@ -87,10 +88,9 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
     }
 
     @Override
-    public boolean remove(Integer id_busqueda) {
-        boolean seHizo = false;
-        try{
-            String query = "DELETE FROM busqueda_vulnerabilidades WHERE id_busqueda = " + id_busqueda + ";";
+    public boolean remove(Integer idBusqueda) {
+        try {
+            String query = "DELETE FROM busqueda_vulnerabilidades WHERE id_busqueda = " + idBusqueda + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -98,34 +98,32 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se elimino el dato");
-            seHizo = true;
+            return true;
         } catch (SQLTimeoutException e) {
-            seHizo = false;
-            System.out.println("No se elimino el dato");
+            System.out.println("No se eliminó el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            seHizo = false;
             System.out.println("No se elimino el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return seHizo;
+        return false;
     }
 
     @Override
-    public BusquedaVulnerabilidadesDTO find(Integer id_busqueda) {
-       BusquedaVulnerabilidadesDTO busqueda = null;
-        ReportesDTO reporte;
-        ReportesDAO reportedao = new ReportesDAOImpl();
-        try{
-            String query = "SELECT*FROM busqueda_vulnerabilidades = " + id_busqueda + ";";
+    public BusquedaVulnerabilidadesDTO find(Integer idBusqueda) {
+        BusquedaVulnerabilidadesDTO busqueda = null;
+        ReportesDTO reportesDTO;
+        ReportesDAO reportesDAO = new ReportesDAOImpl();
+        try {
+            String query = "SELECT * FROM busqueda_vulnerabilidades = " + idBusqueda + ";";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(query);
             rs.first();
-            reporte = reportedao.find(rs.getInt("reporte"));
+            reportesDTO = reportesDAO.find(rs.getInt("reporte"));
             busqueda = new BusquedaVulnerabilidadesDTO(
                     rs.getInt("id_busqueda"),
                     rs.getString("descripcion"),
@@ -133,65 +131,63 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
                     rs.getInt("codigo_cve"),
                     rs.getString("base_score"),
                     rs.getString("vector"),
-                    reporte);
+                    reportesDTO);
             rs.close();
             stmt.close();
             this.conexion.desconectar();
             System.out.println("Se obtuvo el dato");
+            return busqueda;
         } catch (SQLTimeoutException e) {
-            busqueda = null;
-            System.out.println("No se obtuvo el dato");
+            System.out.println("No se encontró el dato, tiempo de espera agotado");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         } catch (SQLException e) {
-            busqueda = null;
             System.out.println("No se obtuvo el dato");
             System.out.println("Causa: " + e.getMessage());
             System.out.println("Causa: " + e.getSQLState());
         }
-        return busqueda;
+        return null;
     }
 
     @Override
     public List<BusquedaVulnerabilidadesDTO> findAll() {
-       List<BusquedaVulnerabilidadesDTO> busquedas = new ArrayList<>();
-       BusquedaVulnerabilidadesDTO busqueda = null;
-       ReportesDTO reporte;
-       ReportesDAO reportedao = new ReportesDAOImpl();
-       try{
-           String query = "SELECT * FROM busqueda_vulnerabilidades;";
-           System.out.println(query);
-           this.conexion.conectar();
-           Statement stmt = this.conexion.getConnection().createStatement();
-           ResultSet rs = stmt.executeQuery(query);
-           while (rs.next()) {
-               reporte = reportedao.find(rs.getInt("reporte"));
-               busqueda = new BusquedaVulnerabilidadesDTO(
-                       rs.getInt("id_busqueda"),
-                       rs.getString("descripcion"),
-                       prueba(rs.getTime("fecha")),
-                       rs.getInt("codigo_cve"),
-                       rs.getString("base_score"),
-                       rs.getString("vector"),
-                       reporte);
-               busquedas.add(busqueda);
-           }
-           rs.close();
-           stmt.close();
-           this.conexion.desconectar();
-           System.out.println("Se obtuvieron los datos");
-       } catch (SQLTimeoutException e) {
-           busquedas = new ArrayList<>();
-           System.out.println("No se obtuvieron los datos");
-           System.out.println("Causa: " + e.getMessage());
-           System.out.println("Causa: " + e.getSQLState());
-       } catch (SQLException e) {
-           busquedas = new ArrayList<>();
-           System.out.println("No se obtuvieron los datos");
-           System.out.println("Causa: " + e.getMessage());
-           System.out.println("Causa: " + e.getSQLState());
-       }
-        return busquedas;
+        List<BusquedaVulnerabilidadesDTO> listado = new ArrayList<>();
+        BusquedaVulnerabilidadesDTO busqueda;
+        ReportesDTO reportesDTO;
+        ReportesDAO reportesDAO = new ReportesDAOImpl();
+        try {
+            String query = "SELECT * FROM busqueda_vulnerabilidades;";
+            System.out.println(query);
+            this.conexion.conectar();
+            Statement stmt = this.conexion.getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                reportesDTO = reportesDAO.find(rs.getInt("reporte"));
+                busqueda = new BusquedaVulnerabilidadesDTO(
+                        rs.getInt("id_busqueda"),
+                        rs.getString("descripcion"),
+                        prueba(rs.getTime("fecha")),
+                        rs.getInt("codigo_cve"),
+                        rs.getString("base_score"),
+                        rs.getString("vector"),
+                        reportesDTO);
+                listado.add(busqueda);
+            }
+            rs.close();
+            stmt.close();
+            this.conexion.desconectar();
+            System.out.println("Se obtuvieron los datos");
+            return listado;
+        } catch (SQLTimeoutException e) {
+            System.out.println("No se encontraron datos, tiempo de espera agotado");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
+        } catch (SQLException e) {
+            System.out.println("No se obtuvieron los datos");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
+        }
+        return null;
     }
 
     @Override
@@ -199,7 +195,7 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
         return findAll().size();
     }
 
-    public Calendar prueba (Date date){
+    public Calendar prueba(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;

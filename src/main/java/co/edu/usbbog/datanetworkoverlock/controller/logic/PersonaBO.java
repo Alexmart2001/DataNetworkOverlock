@@ -7,6 +7,7 @@ import co.edu.usbbog.datanetworkoverlock.model.PersonaDTO;
 import java.util.List;
 
 public class PersonaBO {
+
     private final PersonaDAO personaDAO;
 
     public PersonaBO(){
@@ -20,6 +21,7 @@ public class PersonaBO {
     public String modificarPersona(String usuario, String nombre, String apellido, String clave, String correo){
         return personaDAO.edit(new PersonaDTO(usuario, nombre, apellido, clave, correo)) ? "Modificado" : "No se modificó";
     }
+
     public String eliminarPersona(String usuario){
         return personaDAO.remove(usuario) ? "Eliminado" : "No se eliminó";
     }
@@ -31,4 +33,5 @@ public class PersonaBO {
     public List<PersonaDTO> mostrarPersonas() {
     return personaDAO.findAll();
     }
+
 }
