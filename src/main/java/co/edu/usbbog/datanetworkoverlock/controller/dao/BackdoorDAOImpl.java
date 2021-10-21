@@ -32,7 +32,7 @@ public class BackdoorDAOImpl implements BackdoorDAO {
                     + backdoor.getFecha() + ","
                     + backdoor.getReporte().getIdReporte() +
                     ");";
-            System.out.println(query);
+            System.out.println("query");
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
             stmt.executeUpdate(query);
