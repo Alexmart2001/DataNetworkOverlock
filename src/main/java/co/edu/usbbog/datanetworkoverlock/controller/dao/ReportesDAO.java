@@ -8,10 +8,6 @@ public interface ReportesDAO {
 
     public boolean create(ReportesDTO reporte);
 
-    public boolean edit(ReportesDTO reporte);
-
-    public boolean remove(Integer id_reporte);
-
     public ReportesDTO find(Integer id_reporte);
 
     public List<ReportesDTO> findAll();

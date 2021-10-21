@@ -11,15 +11,6 @@ public class ReportesDAOImpl implements ReportesDAO{
         return false;
     }
 
-    @Override
-    public boolean edit(ReportesDTO reporte) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_reporte) {
-        return false;
-    }
 
     @Override
     public ReportesDTO find(Integer id_reporte) {

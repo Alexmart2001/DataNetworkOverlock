@@ -11,16 +11,6 @@ public class NmapDAOImpl implements NmapDAO{
     }
 
     @Override
-    public boolean edit(NmapDTO nmap) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_analisis_nmap) {
-        return false;
-    }
-
-    @Override
     public NmapDTO find(Integer id_analisis_nmap) {
         return null;
     }

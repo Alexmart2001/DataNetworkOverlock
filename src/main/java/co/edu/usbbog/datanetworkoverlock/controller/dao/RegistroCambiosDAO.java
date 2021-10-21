@@ -8,10 +8,6 @@ public interface RegistroCambiosDAO {
 
     public boolean create(RegistroCambiosDTO registro);
 
-    public boolean edit(RegistroCambiosDTO registro);
-
-    public boolean remove(Integer id_registro);
-
     public RegistroCambiosDTO find(Integer id_registro);
 
     public List<RegistroCambiosDTO> findAll();

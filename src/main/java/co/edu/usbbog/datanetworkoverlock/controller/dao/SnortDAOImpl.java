@@ -12,16 +12,6 @@ public class SnortDAOImpl implements SnortDAO {
     }
 
     @Override
-    public boolean edit(SnortDTO snort) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_analisis_snort) {
-        return false;
-    }
-
-    @Override
     public SnortDTO find(Integer id_analisis_snort) {
         return null;
     }

@@ -11,16 +11,6 @@ public class NessusDAOImpl implements NessusDAO{
     }
 
     @Override
-    public boolean edit(NessusDTO nessus) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_analisis_nessus) {
-        return false;
-    }
-
-    @Override
     public NessusDTO find(Integer id_analisis_nessus) {
         return null;
     }

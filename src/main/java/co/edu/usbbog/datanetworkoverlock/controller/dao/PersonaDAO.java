@@ -8,10 +8,6 @@ public interface PersonaDAO {
 
     public boolean create(PersonaDTO persona);
 
-    public boolean edit(PersonaDTO persona);
-
-    public boolean remove(String usuario);
-
     public PersonaDTO find(String usuario);
 
     public List<PersonaDTO> findAll();

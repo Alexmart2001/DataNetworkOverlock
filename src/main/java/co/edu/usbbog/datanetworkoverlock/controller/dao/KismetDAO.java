@@ -8,10 +8,6 @@ public interface KismetDAO {
 
     public boolean create(KismetDTO kismet);
 
-    public boolean edit(KismetDTO kismet);
-
-    public boolean remove(Integer id_analisis_kismet);
-
     public KismetDTO find(Integer id_analisis_kismet);
 
     public List<KismetDTO> findAll();

@@ -8,10 +8,6 @@ public interface NessusDAO {
 
     public boolean create(NessusDTO nessus);
 
-    public boolean edit(NessusDTO nessus);
-
-    public boolean remove(Integer id_analisis_nessus);
-
     public NessusDTO find(Integer id_analisis_nessus);
 
     public List<NessusDTO> findAll();

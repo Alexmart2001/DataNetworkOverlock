@@ -12,16 +12,6 @@ public class KismetDAOImpl implements KismetDAO{
     }
 
     @Override
-    public boolean edit(KismetDTO kismet) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_analisis_kismet) {
-        return false;
-    }
-
-    @Override
     public KismetDTO find(Integer id_analisis_kismet) {
         return null;
     }

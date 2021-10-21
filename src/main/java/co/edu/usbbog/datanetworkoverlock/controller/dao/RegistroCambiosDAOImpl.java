@@ -12,16 +12,6 @@ public class RegistroCambiosDAOImpl implements RegistroCambiosDAO {
     }
 
     @Override
-    public boolean edit(RegistroCambiosDTO registro) {
-        return false;
-    }
-
-    @Override
-    public boolean remove(Integer id_registro) {
-        return false;
-    }
-
-    @Override
     public RegistroCambiosDTO find(Integer id_registro) {
         return null;
     }
