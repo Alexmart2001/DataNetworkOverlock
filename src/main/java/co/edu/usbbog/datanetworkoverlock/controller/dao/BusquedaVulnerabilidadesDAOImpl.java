@@ -200,4 +200,6 @@ public class BusquedaVulnerabilidadesDAOImpl implements BusquedaVulnerabilidades
         calendar.setTime(date);
         return calendar;
     }
+
+
 }
