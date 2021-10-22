@@ -5,13 +5,16 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
-import java.io.ByteArrayOutputStream;
+import java.io.*;
 
 public class ConexionSSH {
 
     public void ejecutarComando(String usuario, String clave, String host, int puerto, String comando) {
         Session sesion = null;
         ChannelExec canal = null;
+        InputStream resultado;
+        BufferedReader lector;
+        String linea;
 
         try {
             sesion = new JSch().getSession(usuario, host, puerto);
@@ -22,24 +25,26 @@ public class ConexionSSH {
             canal = (ChannelExec) sesion.openChannel("exec");
             canal.setCommand(comando);
 
-            ByteArrayOutputStream respuesta = new ByteArrayOutputStream();
-            canal.setOutputStream(respuesta);
-            canal.connect();
+            resultado = canal.getInputStream();
+            lector = new BufferedReader(new InputStreamReader(resultado));
+            canal.connect(5000);
 
-            while(canal.isConnected()) {
-                Thread.sleep(100);
+            while ((linea = lector.readLine()) != null) {
+                System.out.println(linea);
             }
-
-            String respuestaFormato = respuesta.toString();
-            System.out.println(respuestaFormato);
-        } catch (JSchException | InterruptedException e) {
+        } catch (JSchException | IOException e) {
+            System.out.println("Excepción de Jsch: " + e.getMessage());
             e.printStackTrace();
         } finally {
-            if (sesion != null)
-                sesion.disconnect();
             if (canal != null)
                 canal.disconnect();
+            if (sesion != null)
+                sesion.disconnect();
         }
+    }
+
+    public static void main(String[] args) {
+        new ConexionSSH().ejecutarComando("root", "password", "192.168.1.100", 22, "ls -la");
     }
 
 }
