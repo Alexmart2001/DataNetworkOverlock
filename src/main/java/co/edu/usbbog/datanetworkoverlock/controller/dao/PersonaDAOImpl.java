@@ -21,13 +21,13 @@ public class PersonaDAOImpl implements PersonaDAO {
     @Override
     public boolean create(PersonaDTO persona) {
         try{
-            String query = "INSERT INTO persona(usuario, nombre, apellido, clave, correo)"
+            String query = "INSERT INTO persona(usuario, nombre, apellido, clave, correo) "
                     + "VALUES ("
-                    +"'"+ persona.getUsuario() + "',"
-                    +"'" + persona.getNombre() + "',"
-                    +"'" + persona.getApellido() + "',"
-                    +"'" + persona.getClave() + "',"
-                    +"'" + persona.getEmail() + "');";
+                    + "'" + persona.getUsuario() + "', "
+                    + "'" + persona.getNombre() + "', "
+                    + "'" + persona.getApellido() + "', "
+                    + "'" + persona.getClave() + "', "
+                    + "'" + persona.getEmail() + "');";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -51,11 +51,11 @@ public class PersonaDAOImpl implements PersonaDAO {
     @Override
     public boolean edit(PersonaDTO usuario) {
         try {
-            String query = "UPDATE persona SET"
-                    + "nombre = '" + usuario.getNombre() + "',"
-                    + "apellido = '" + usuario.getApellido() + "',"
-                    + "clave = '" + usuario.getClave() + "',"
-                    + "correo = '" + usuario.getEmail() + "'"
+            String query = "UPDATE persona SET "
+                    + "nombre = '" + usuario.getNombre() + "', "
+                    + "apellido = '" + usuario.getApellido() + "', "
+                    + "clave = '" + usuario.getClave() + "', "
+                    + "correo = '" + usuario.getEmail() + "' "
                     + "WHERE usuario = '" + usuario.getUsuario() + "';";
             System.out.println(query);
             this.conexion.conectar();
@@ -80,7 +80,7 @@ public class PersonaDAOImpl implements PersonaDAO {
     @Override
     public boolean remove(String usuario) {
         try{
-            String query = "DELETE FROM persona where usuario = " + usuario + ";";
+            String query = "DELETE FROM persona WHERE usuario = '" + usuario + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -106,7 +106,7 @@ public class PersonaDAOImpl implements PersonaDAO {
     public PersonaDTO find(String usuario) {
         PersonaDTO persona;
         try{
-            String query = "SELECT * FROM persona WHERE usuario = "+ usuario + ";";
+            String query = "SELECT * FROM persona WHERE usuario = '"+ usuario + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();

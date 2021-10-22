@@ -9,13 +9,40 @@
     <version>1.0-SNAPSHOT</version>
     <name>DataNetworkOverlock</name>
 
+    <licenses>
+        <license>
+            <name>GNU/GPLv3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>miklegonza</id>
+            <name>Michael González</name>
+            <email>msgonzalezv@academia.usbbog.edu.co</email>
+            <url>https://miklegonza.github.io/</url>
+        </developer>
+        <developer>
+            <id>Alexmart2001</id>
+            <name>Alexander Martínez</name>
+            <email>ramartinezl@academia.usbbog.edu.co</email>
+            <url>https://github.com/Alexmart2001</url>
+        </developer>
+        <developer>
+            <id>DRJ44</id>
+            <name>David Rojas</name>
+            <email>drojasj@academia.usbbog.edu.co</email>
+            <url>https://github.com/DRJ44</url>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.7.1</junit.version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -30,6 +57,11 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
         </dependency>
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
