@@ -25,13 +25,13 @@ public class KismetDAOImpl implements KismetDAO{
             try{
                 String query = "INSERT INTO kismet (id_analisis_kismet, nombre_red_detectada, clientes_detectados, modo_funcionamiento_disp_wifi, "
                         + "tipo_encriptacion, canal_operacion_red, paquetes_capturados, intrusiones) VALUES ("
-                        + kismet.getIdAnalisisKismet() + ","
-                        + "'"+ kismet.getNombreRedDetectada() + "',"
-                        + "'" + kismet.getClientesDetectados() + "',"
-                        + "'" + kismet.getModoFuncionamientoWifi() + "',"
-                        + "'" + kismet.getTipoEncriptacion() + "',"
-                        + "'" + kismet.getCanalOperacionRed() + "',"
-                        + "'" + kismet.getPaquetesCapturados() + "',"
+                        + kismet.getId_analisis_kismet() + ","
+                        + "'"+ kismet.getNombre_red_detectada() + "',"
+                        + "'" + kismet.getClientes_detectados() + "',"
+                        + "'" + kismet.getModo_funcionamiento_disp_wifi() + "',"
+                        + "'" + kismet.getTipo_encriptacion() + "',"
+                        + "'" + kismet.getCanal_operacion_red() + "',"
+                        + "'" + kismet.getPaquetes_capturados() + "',"
                         +       kismet.getIntrusiones().getIdIntrusion()
                         + ");";
                 System.out.println(query);
