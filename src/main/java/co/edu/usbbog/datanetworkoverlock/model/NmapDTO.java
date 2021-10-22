@@ -42,7 +42,7 @@ public class NmapDTO {
         this.fallosRed = new FallosDeRedDTO();
     }
 
-    public NmapDTO(Integer idAnalisisNmap, String protocoloPuerto, String estado, String razon, String nombreServicio, String producto, String version, Integer puertoId, String informacionExtra, BackdoorDTO backdoor, FallosDeRedDTO fallos) {
+    public NmapDTO(Integer idAnalisisNmap, String protocoloPuerto, String estado, String razon, String nombreServicio, String producto, String version, Integer puertoId, String informacionExtra, BackdoorDTO backdoor, FallosDeRedDTO fallosDeRedDTO) {
         this.idAnalisisNmap = idAnalisisNmap;
         this.protocoloPuerto = protocoloPuerto;
         this.estado = estado;
@@ -53,7 +53,7 @@ public class NmapDTO {
         this.puertoId = puertoId;
         this.informacionExtra = informacionExtra;
         this.backdoor = backdoor;
-        this.fallosRed = fallos;
+        this.fallosRed = fallosDeRedDTO;
     }
 
     public Integer getIdAnalisisNmap() {
