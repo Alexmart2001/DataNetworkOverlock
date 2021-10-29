@@ -143,5 +143,4 @@ public class NmapDTO {
     public void setFallosRed(FallosDeRedDTO fallosRed) {
         this.fallosRed = fallosRed;
     }
-
 }

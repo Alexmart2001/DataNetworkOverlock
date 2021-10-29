@@ -66,7 +66,6 @@ public class SnortDAOImpl implements SnortDAO {
             ResultSet rs = stmt.executeQuery(query);
             rs.first();
             intrusionesDTO = intrusionesDAO.find(rs.getInt("escaneo"));
-
             snort = new SnortDTO(
                     rs.getInt("id_analisis_snort"),
                     calendario(rs.getTime("fecha")),
