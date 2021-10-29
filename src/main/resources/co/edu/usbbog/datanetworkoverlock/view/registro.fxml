@@ -24,7 +24,7 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="Tf_Nombre" layoutX="56.0" layoutY="72.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
+                <TextField fx:id="Tf_Nombre" layoutX="56.0" layoutY="72.0" prefHeight="25.0" prefWidth="450" text="Introduzca dato">
                     <effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>

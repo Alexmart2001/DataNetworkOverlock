@@ -6,12 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class RegistroController {
+
+
 
     private Stage stage;
     @FXML
@@ -22,6 +26,9 @@ public class RegistroController {
     private Parent root;
     @FXML
     private Scene scene;
+    @FXML
+    private TextField Tf_Nombre;
+
 
     @FXML
     public void cerrar() {
@@ -39,11 +46,18 @@ public class RegistroController {
 
     @FXML
     public void Switch1(ActionEvent event) throws IOException {
+        
+
         root = FXMLLoader.load(getClass().getResource("inicioSesion.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene((Parent) root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    public String registrar (){
+
     }
 
 }
