@@ -31,7 +31,7 @@ buildNumber.properties
 ### IntelliJ IDEA ###
 .idea
 *.iws
-.iml
+*.iml
 *.ipr
 
 ### visual studio code rules ###
