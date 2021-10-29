@@ -110,7 +110,7 @@ public class SnortDAOImpl implements SnortDAO {
             snort = new SnortDTO(
                     rs.getInt("id_analisis_snort"),
                     calendario(rs.getTime("fecha")),
-                    cal(rs.getTime("hora")),
+                    calendario(rs.getTime("hora")),
                     rs.getString("prioridad"),
                     rs.getString("nombre_host"),
                     rs.getString("mensaje"),
