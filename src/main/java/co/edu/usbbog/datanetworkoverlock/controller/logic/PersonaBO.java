@@ -26,8 +26,8 @@ public class PersonaBO {
         return personaDAO.remove(usuario) ? "Eliminado" : "No se eliminó";
     }
 
-    public PersonaDTO buscarPersona (String usuario){
-        return personaDAO.find(usuario);
+    public PersonaDTO buscarPersona (String usuario, String clave){
+        return personaDAO.validate(usuario, clave);
     }
 
     public List<PersonaDTO> mostrarPersonas() {

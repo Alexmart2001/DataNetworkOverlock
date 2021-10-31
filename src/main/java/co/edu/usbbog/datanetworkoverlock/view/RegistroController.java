@@ -2,22 +2,22 @@ package co.edu.usbbog.datanetworkoverlock.view;
 
 import co.edu.usbbog.datanetworkoverlock.controller.logic.PersonaBO;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 public class RegistroController {
-
-
 
     private Stage stage;
     @FXML
@@ -29,63 +29,72 @@ public class RegistroController {
     @FXML
     private Scene scene;
     @FXML
-    private TextField Tf_Nombre;
+    private TextField fieldNombre;
     @FXML
-    private TextField Tf_Apellido;
+    private TextField fieldApellido;
     @FXML
-    private TextField Tf_correo;
+    private TextField fieldCorreo;
     @FXML
-    private TextField Tf_usuario;
+    private TextField fieldUsuario;
     @FXML
-    private PasswordField PF_Password;
+    private PasswordField fieldPassword;
     @FXML
-    private PasswordField PR_Password_2;
+    private PasswordField fieldConfirmPassword;
+    @FXML
+    public Button btnRegistrarse;
 
-        PersonaBO registro;
+    PersonaBO registro = new PersonaBO();
 
     @FXML
     public void cerrar() {
-        // get a handle to the stage
         stage = (Stage) btnClose.getScene().getWindow();
-        // do what you have to do
         stage.close();
     }
 
     @FXML
-    public void minimize(){
+    public void minimize() {
         stage = (Stage) btnMinimize.getScene().getWindow();
         stage.setIconified(true);
     }
 
     @FXML
-    public void Switch1(ActionEvent event) throws IOException {
+    public void registrar(ActionEvent event) {
 
-        String name = Tf_Nombre.getText();
-        String ape = Tf_Apellido.getText();
-        String cor = Tf_correo.getText();
-        String usu = Tf_usuario.getText();
-        String pas = PF_Password.getText();
-        String contra = PR_Password_2.getText();
+        String name = fieldNombre.getText();
+        String ape = fieldApellido.getText();
+        String cor = fieldCorreo.getText();
+        String usu = fieldUsuario.getText();
+        String pas = fieldPassword.getText();
+        String contra = fieldConfirmPassword.getText();
 
-        if (pas.equals(contra)){
+        if (pas.equals(contra)) {
             System.out.println(registrar(name, ape, cor, usu, pas));
-
-        }else {
+            switchScenes(event);
+        } else {
             System.out.println("Las contraseñas no coinciden");
         }
-
-        root = FXMLLoader.load(getClass().getResource("inicioSesion.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene((Parent) root);
-        stage.setScene(scene);
-        stage.show();
-
-
     }
 
     @FXML
-    public String registrar (String Tf_Nombre, String Tf_Apellido, String Tf_correo, String Tf_usuario, String PF_Password  ){
-        return registro.crearPersona(Tf_usuario, Tf_Nombre, Tf_Apellido, PF_Password,Tf_correo);
+    public void login(MouseEvent event) {
+        switchScenes(event);
+    }
+
+    private void switchScenes(Event event) {
+        try {
+            root = FXMLLoader.load(getClass().getResource("inicioSesion.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene((Parent) root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+
+    public String registrar(String nombre, String apellido, String correo, String usuario, String password) {
+        return registro.crearPersona(usuario, nombre, apellido, password, correo);
     }
 
 }
