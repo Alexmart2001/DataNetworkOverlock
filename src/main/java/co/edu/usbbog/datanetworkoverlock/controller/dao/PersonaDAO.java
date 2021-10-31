@@ -12,7 +12,9 @@ public interface PersonaDAO {
 
     public boolean remove(String usuario);
 
-    public PersonaDTO find(String usuario);
+    public PersonaDTO find(String ususario);
+
+    public PersonaDTO validate(String usuario, String clave);
 
     public List<PersonaDTO> findAll();
 
