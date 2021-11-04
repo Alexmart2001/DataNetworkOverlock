@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.DashboardController">
+<AnchorPane prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.DashboardController">
    <children>
       <Pane layoutX="-2.0" prefHeight="550.0" prefWidth="235.0" style="-fx-background-color: #141418;">
          <children>
@@ -64,17 +61,17 @@
             <Image url="@../../../../../Iconos/overlock.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnOpciones" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#desplegarMenu" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="815.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-bulleted-list-96.png" />
+            <Image url="@../../../../../Iconos/icons8-add-user-male-96.png" />
          </image>
          <effect>
             <Bloom />
          </effect>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="815.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="845.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-settings-96.png" />
+            <Image url="@../../../../../Iconos/icons8-business-report-96.png" />
          </image>
          <effect>
             <Bloom />
