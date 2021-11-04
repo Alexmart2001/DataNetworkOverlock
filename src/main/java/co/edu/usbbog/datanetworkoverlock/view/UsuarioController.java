@@ -22,6 +22,8 @@ public class UsuarioController {
     private Parent root;
     @FXML
     private Scene scene;
+    @FXML
+    private ImageView Btn_Dash;
 
     @FXML
     public void cerrar() {
@@ -40,6 +42,16 @@ public class UsuarioController {
     @FXML
     public void Switch1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene((Parent) root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    @FXML
+    public void SwitchR(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("reportes.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene((Parent) root);
         stage.setScene(scene);

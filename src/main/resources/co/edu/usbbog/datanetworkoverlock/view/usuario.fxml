@@ -48,17 +48,17 @@
             <Bloom />
          </effect>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#SwitchR" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-settings-96.png" />
+            <Image url="@../../../../../Iconos/icons8-business-report-96.png" />
          </image>
          <effect>
             <Bloom />
          </effect>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Btn_Dash" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#Switch1" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-bulleted-list-96.png" />
+            <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png" />
          </image>
          <effect>
             <Bloom />
@@ -90,7 +90,7 @@
          </effect></Button>
       <ImageView fitHeight="422.0" fitWidth="422.0" layoutX="428.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Iconos/icons8-restore-96.png" />
+            <Image url="@../../../../../Iconos/WhatsApp%20Image%202021-09-23%20at%2010.01.07%20PM.jpeg" />
          </image>
       </ImageView>
    </children>
