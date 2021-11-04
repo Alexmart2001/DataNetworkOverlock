@@ -26,7 +26,6 @@ public class Conexion {
     public Connection conectar() {
         try {
             String path = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            System.out.println(path);
             this.connection = DriverManager.getConnection(path, user, pass);
             System.out.println("Felicidades, te has conectado");
         } catch (SQLException ex) {
@@ -37,6 +36,7 @@ public class Conexion {
         }
         return connection;
     }
+
     public void desconectar() {
         try {
             this.connection.close();
@@ -49,6 +49,7 @@ public class Conexion {
         }
         this.connection = null;
     }
+
     public Connection getConnection() {
         return connection;
     }

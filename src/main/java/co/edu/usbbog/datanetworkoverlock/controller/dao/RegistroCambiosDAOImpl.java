@@ -1,7 +1,6 @@
 package co.edu.usbbog.datanetworkoverlock.controller.dao;
 
 import co.edu.usbbog.datanetworkoverlock.controller.config.Conexion;
-import co.edu.usbbog.datanetworkoverlock.model.BackdoorDTO;
 import co.edu.usbbog.datanetworkoverlock.model.PersonaDTO;
 import co.edu.usbbog.datanetworkoverlock.model.RegistroCambiosDTO;
 import co.edu.usbbog.datanetworkoverlock.model.ReportesDTO;
@@ -27,10 +26,10 @@ public class RegistroCambiosDAOImpl implements RegistroCambiosDAO {
     public boolean create(RegistroCambiosDTO registro) {
         try {
             String query = "INSERT INTO backdoor(id_registro, descripcion, fecha, usuario, reporte) VALUES ("
-                    + registro.getIdRegistro() + ","
-                    + registro.getDescripcion() + ","
-                    + registro.getFecha() + ","
-                    + registro.getUsuario().getUsuario() +
+                    + registro.getIdRegistro() + " ,"
+                    + registro.getDescripcion() + " ,"
+                    + registro.getFecha() + " ,"
+                    + registro.getUsuario().getUsuario() + " ,"
                     + registro.getReporte().getIdReporte() +
                     ");";
             System.out.println(query);

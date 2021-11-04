@@ -1,79 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550"
+            prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.usbbog.datanetworkoverlock.view.RegistroController">
 
-    <children>
-        <Pane layoutX="125.0" layoutY="85.0" pickOnBounds="false" prefHeight="428.0" prefWidth="650.0" style="-fx-background-color: #222426;">
-            <effect>
-                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                    <bumpInput>
-                        <Shadow />
-                    </bumpInput>
-                </Lighting>
-            </effect>
-            <children>
-                <Label layoutX="56.0" layoutY="50.0" text="Nombre" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="Tf_Nombre" layoutX="56.0" layoutY="72.0" prefHeight="25.0" prefWidth="450" text="sdfghj">
-                    <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                            <bumpInput>
-                                <Shadow />
-                            </bumpInput>
-                            <light>
-                                <Light.Distant>
-                                   <color>
-                                      <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                   </color>
-                                </Light.Distant>
-                            </light>
-                        </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </TextField>
-                <Label layoutX="56.0" layoutY="104.0" text="Apellido" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="Tf_Apellido" layoutX="56.0" layoutY="126.0" prefHeight="25.0" prefWidth="450">
-                    <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                            <bumpInput>
-                                <Shadow />
-                            </bumpInput>
-                            <light>
-                                <Light.Distant>
-                                    <color>
-                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                    </color>
-                                </Light.Distant>
-                            </light>
-                        </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </TextField>
-                <Label layoutX="56.0" layoutY="156.0" text="Correo electronico" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="Tf_correo" layoutX="56.0" layoutY="178.0" prefHeight="25.0" prefWidth="450">
-                    <effect>
+    <Pane layoutX="125.0" layoutY="85.0" pickOnBounds="false" prefHeight="428.0" prefWidth="650.0"
+          style="-fx-background-color: #222426;">
+        <Label alignment="CENTER" layoutX="534.0" layoutY="402.0" onMouseClicked="#login" text="Iniciar sesión"
+               textFill="#47a7ff" underline="true">
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Label>
+        <Label layoutX="103.0" layoutY="27.0" text="Nombre" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="fieldNombre" layoutX="103.0" layoutY="52.0" prefHeight="25.0" prefWidth="450">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="103.0" layoutY="84.0" text="Apellido" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="fieldApellido" layoutX="103.0" layoutY="106.0" prefHeight="25.0" prefWidth="450">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="103.0" layoutY="136.0" text="Correo electronico" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="fieldCorreo" layoutX="103.0" layoutY="158.0" prefHeight="25.0" prefWidth="450">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="103.0" layoutY="190.0" text="Nombre de usuario" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="fieldUsuario" layoutX="103.0" layoutY="212.0" prefHeight="25.0" prefWidth="450">
+            <!--effect>
                         <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                             <bumpInput>
                                 <Shadow />
@@ -81,129 +74,76 @@
                             <light>
                                 <Light.Distant>
                                     <color>
-                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
+                                        <Color red="0.9999999" green="0.9999999" blue="0.9999999" />
                                     </color>
                                 </Light.Distant>
                             </light>
                         </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </TextField>
-                <Label layoutX="56.0" layoutY="210.0" text="Nombre de usuario" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="Tf_usuario" layoutX="56.0" layoutY="232.0" prefHeight="25.0" prefWidth="450">
-                    <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                            <bumpInput>
-                                <Shadow />
-                            </bumpInput>
-                            <light>
-                                <Light.Distant>
-                                    <color>
-                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                    </color>
-                                </Light.Distant>
-                            </light>
-                        </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </TextField>
-                <Label layoutX="56.0" layoutY="266.0" text="Contraseña" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="56.0" layoutY="326.0" text="Confirmar contraseña" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <PasswordField fx:id="PF_Password" layoutX="56.0" layoutY="288.0" prefHeight="25.0" prefWidth="450">
-                    <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                            <bumpInput>
-                                <Shadow />
-                            </bumpInput>
-                            <light>
-                                <Light.Distant>
-                                    <color>
-                                        <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                    </color>
-                                </Light.Distant>
-                            </light>
-                        </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </PasswordField>
-                <PasswordField fx:id="PR_Password_2" layoutX="56.0" layoutY="348.0" prefHeight="25.0" prefWidth="450">
-                    <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                            <bumpInput>
-                                <Shadow />
-                            </bumpInput>
-                            <light>
-                                <Light.Distant>
-                           <color>
-                              <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                           </color></Light.Distant>
-                            </light>
-                        </Lighting>
-                    </effect>
-                   <font>
-                      <Font size="15.0" />
-                   </font>
-                </PasswordField>
-            <Label layoutX="517.0" layoutY="288.0" prefHeight="31.0" prefWidth="119.0" text="Contraseña debil" textFill="#ed2f2f">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            </children>
-        </Pane>
-        <ImageView fitHeight="80.0" fitWidth="404.0" layoutX="248.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../../../Iconos/iCON.png" />
-            </image>
-        </ImageView>
-        <Button fx:id="Btn_registrarse" layoutX="785.0" layoutY="493.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
+                    </effect-->
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="103.0" layoutY="246.0" text="Contraseña" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <Label layoutX="103.0" layoutY="306.0" text="Confirmar contraseña" textFill="WHITE">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Label>
+        <PasswordField fx:id="fieldPassword" layoutX="103.0" layoutY="268.0" prefHeight="25.0" prefWidth="450">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </PasswordField>
+        <PasswordField fx:id="fieldConfirmPassword" layoutX="103.0" layoutY="328.0" prefHeight="25.0"
+                       prefWidth="450">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </PasswordField>
+        <Label alignment="CENTER_RIGHT" layoutX="436.0" layoutY="294.0" prefHeight="31.0" prefWidth="117.0"
+               text="Contraseña débil" textAlignment="RIGHT" textFill="#ed2f2f">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Button fx:id="btnRegistrarse" layoutX="289.0" layoutY="378.0" mnemonicParsing="false" onAction="#registrar"
+                style="-fx-background-color: #222426;" text="Registrarse" textFill="WHITE">
             <effect>
                 <Lighting diffuseConstant="0.55" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
-                        <Shadow />
+                        <Shadow/>
                     </bumpInput>
-                    <light>
-                        <Light.Distant />
-                    </light>
                 </Lighting>
             </effect>
-             <font>
-                <Font size="15.0" />
-             </font>
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
         </Button>
-        <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="14.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
-            </image>
-            <effect>
-                <Bloom />
-            </effect>
-        </ImageView>
-        <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="14.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
-            </image>
-            <effect>
-                <Bloom />
-            </effect>
-        </ImageView>
-    </children>
+    </Pane>
+    <ImageView fitHeight="80.0" fitWidth="404.0" layoutX="257.0" layoutY="20.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../../../../../Iconos/iCON.png"/>
+    </ImageView>
+    <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="846.0" layoutY="16.0"
+               onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-close-window-96.png"/>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </ImageView>
+    <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="811.0" layoutY="15.0"
+               onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-minimize-window-96.png"/>
+        <cursor>
+            <Cursor fx:constant="HAND"/>
+        </cursor>
+    </ImageView>
 </AnchorPane>

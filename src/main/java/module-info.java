@@ -7,6 +7,7 @@ module co.edu.usbbog.datanetworkoverlock {
     requires eu.hansolo.tilesfx;
     requires java.sql;
     requires mysql.connector.java;
+    requires jsch;
 
     exports co.edu.usbbog.datanetworkoverlock.view;
     opens co.edu.usbbog.datanetworkoverlock.view to javafx.fxml;

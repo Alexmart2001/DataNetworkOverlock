@@ -14,20 +14,20 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     private final Conexion conexion;
 
-    public PersonaDAOImpl(){
+    public PersonaDAOImpl() {
         this.conexion = new Conexion();
     }
 
     @Override
     public boolean create(PersonaDTO persona) {
-        try{
-            String query = "INSERT INTO persona(usuario, nombre, apellido, clave, correo)"
+        try {
+            String query = "INSERT INTO persona(usuario, nombre, apellido, clave, correo) "
                     + "VALUES ("
-                    +"'"+ persona.getUsuario() + "',"
-                    +"'" + persona.getNombre() + "',"
-                    +"'" + persona.getApellido() + "',"
-                    +"'" + persona.getClave() + "',"
-                    +"'" + persona.getEmail() + "');";
+                    + "'" + persona.getUsuario() + "', "
+                    + "'" + persona.getNombre() + "', "
+                    + "'" + persona.getApellido() + "', "
+                    + "'" + persona.getClave() + "', "
+                    + "'" + persona.getEmail() + "');";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -51,11 +51,11 @@ public class PersonaDAOImpl implements PersonaDAO {
     @Override
     public boolean edit(PersonaDTO usuario) {
         try {
-            String query = "UPDATE persona SET"
-                    + "nombre = '" + usuario.getNombre() + "',"
-                    + "apellido = '" + usuario.getApellido() + "',"
-                    + "clave = '" + usuario.getClave() + "',"
-                    + "correo = '" + usuario.getEmail() + "'"
+            String query = "UPDATE persona SET "
+                    + "nombre = '" + usuario.getNombre() + "', "
+                    + "apellido = '" + usuario.getApellido() + "', "
+                    + "clave = '" + usuario.getClave() + "', "
+                    + "correo = '" + usuario.getEmail() + "' "
                     + "WHERE usuario = '" + usuario.getUsuario() + "';";
             System.out.println(query);
             this.conexion.conectar();
@@ -79,8 +79,8 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     @Override
     public boolean remove(String usuario) {
-        try{
-            String query = "DELETE FROM persona where usuario = " + usuario + ";";
+        try {
+            String query = "DELETE FROM persona WHERE usuario = '" + usuario + "';";
             System.out.println(query);
             this.conexion.conectar();
             Statement stmt = this.conexion.getConnection().createStatement();
@@ -101,45 +101,21 @@ public class PersonaDAOImpl implements PersonaDAO {
         return false;
     }
 
+    @Override
+    public PersonaDTO validate(String usuario, String clave) {
+        return query(1, usuario, clave);
+    }
 
     @Override
     public PersonaDTO find(String usuario) {
-        PersonaDTO persona;
-        try{
-            String query = "SELECT * FROM persona WHERE usuario = "+ usuario + ";";
-            System.out.println(query);
-            this.conexion.conectar();
-            Statement stmt = this.conexion.getConnection().createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            rs.first();
-            persona = new PersonaDTO(
-                    rs.getString("usuario"),
-                    rs.getString("nombre"),
-                    rs.getString("Apellido"),
-                    rs.getString("clave"),
-                    rs.getString("correo"));
-                    rs.close();
-            stmt.close();
-            this.conexion.desconectar();
-            System.out.println("Se obtuvo el dato");
-            return persona;
-        } catch (SQLTimeoutException e) {
-            System.out.println("No se obtuvo el dato, tiempo de espera agotado");
-            System.out.println("Causa: " + e.getMessage());
-            System.out.println("Causa: " + e.getSQLState());
-        } catch (SQLException e) {
-            System.out.println("No se obtuvo el dato");
-            System.out.println("Causa: " + e.getMessage());
-            System.out.println("Causa: " + e.getSQLState());
-        }
-        return null;
+        return query(0, usuario, null);
     }
 
     @Override
     public List<PersonaDTO> findAll() {
         List<PersonaDTO> personas = new ArrayList<>();
         PersonaDTO persona;
-        try{
+        try {
             String query = "SELECT * FROM persona;";
             System.out.println(query);
             this.conexion.conectar();
@@ -152,7 +128,7 @@ public class PersonaDAOImpl implements PersonaDAO {
                         rs.getString("Apellido"),
                         rs.getString("clave"),
                         rs.getString("correo"));
-                        personas.add(persona);
+                personas.add(persona);
             }
             rs.close();
             stmt.close();
@@ -174,6 +150,42 @@ public class PersonaDAOImpl implements PersonaDAO {
     @Override
     public int count() {
         return findAll().size();
+    }
+
+    private PersonaDTO query(int option, String usuario, String clave) {
+        PersonaDTO persona;
+        try {
+            String query =
+                    option == 0 ?
+                            "SELECT * FROM persona WHERE usuario = '" + usuario + "';"
+                            :
+                            "SELECT * FROM persona WHERE usuario = '" + usuario + "' AND clave = '" + clave + "';";
+            System.out.println(query);
+            this.conexion.conectar();
+            Statement stmt = this.conexion.getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            rs.first();
+            persona = new PersonaDTO(
+                    rs.getString("usuario"),
+                    rs.getString("nombre"),
+                    rs.getString("Apellido"),
+                    rs.getString("clave"),
+                    rs.getString("correo"));
+            rs.close();
+            stmt.close();
+            this.conexion.desconectar();
+            System.out.println("Se obtuvo el dato");
+            return persona;
+        } catch (SQLTimeoutException e) {
+            System.out.println("No se obtuvo el dato, tiempo de espera agotado");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
+        } catch (SQLException e) {
+            System.out.println("No se obtuvo el dato");
+            System.out.println("Causa: " + e.getMessage());
+            System.out.println("Causa: " + e.getSQLState());
+        }
+        return null;
     }
 
 }
