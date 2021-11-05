@@ -72,20 +72,20 @@ public class DashboardController {
         concurrentTask.setOnSucceeded(event -> codeArea.appendText(concurrentTask.getValue()));
 
         new Thread(concurrentTask).start();
-        /*
-        try {
-            socket = socketFactory.createSocket(HostInfo.HOST.getValue(), Integer.parseInt(HostInfo.PORT.getValue()));
-            entrada = new DataInputStream(socketFactory.getInputStream(socket));
-            salida = new DataOutputStream(socketFactory.getOutputStream(socket));
-            while (true) {
-                linea = entrada.readUTF();
-                System.out.println("Recibiendo: " + linea);
-                //codeArea.appendText(linea);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error de sockets");
-        }*/
+
+        //try {
+        //    socket = socketFactory.createSocket(HostInfo.HOST.getValue(), 9000);
+        //    entrada = new DataInputStream(socketFactory.getInputStream(socket));
+        //    salida = new DataOutputStream(socketFactory.getOutputStream(socket));
+        //    while (true) {
+        //        linea = entrada.readUTF();
+        //        System.out.println("Recibiendo: " + linea);
+        //        //codeArea.appendText(linea);
+        //    }
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //    System.out.println("Error de sockets");
+        //}
     }
 
     public void writeSocket() {

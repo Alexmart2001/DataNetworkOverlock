@@ -7,126 +7,151 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.ReportesController">
-   <children>
-      <Pane prefHeight="550.0" prefWidth="246.0" style="-fx-background-color: #1C1B21;">
-         <children>
-            <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
-               </image>
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-            <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
-               </image>
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-            <Pane layoutX="14.0" layoutY="95.0" prefHeight="436.0" prefWidth="220.0" style="-fx-background-color: #1C1B27;">
-               <effect>
-                  <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                  </Lighting>
-               </effect>
-               <children>
-                  <TextField layoutX="9.0" layoutY="14.0" promptText="Buscar" text="Buscar">
-                     <effect>
-                        <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant>
-                                 <color>
-                                    <Color red="0.1725490242242813" green="0.1725490242242813" blue="0.23529411852359772" />
-                                 </color></Light.Distant>
-                           </light>
-                        </Lighting>
-                     </effect>
-                  </TextField>
-               </children></Pane>
-            <Label layoutX="18.0" layoutY="53.0" prefHeight="42.0" prefWidth="220.0" text="Reportes Existentes" textFill="#cdc6c6">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="248.0" prefHeight="550.0" prefWidth="653.0" style="-fx-background-color: 2025;">
-         <children>
-            <Pane layoutX="35.0" layoutY="65.0" prefHeight="415.0" prefWidth="599.0" style="-fx-background-color: #1C1B27 #1C1B27;">
-               <effect>
-                  <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                  </Lighting>
-               </effect>
-            </Pane>
-            <Button fx:id="Btn_Regresar" layoutX="40.0" layoutY="485.0" mnemonicParsing="false" onAction="#Switch1" prefHeight="42.0" prefWidth="109.0" style="-fx-background-color: #1C1B27;" text="Regresar" textFill="#cfdbe8">
-               <effect>
-                  <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                  </Lighting>
-               </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="405.0" layoutY="485.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" style="-fx-background-color: #1C1B27;" text="Examinar" textFill="#b6c3d0">
-               <effect>
-                  <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                  </Lighting>
-               </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="525.0" layoutY="485.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" style="-fx-background-color: #1C1B27;" text="Exportar PDF" textFill="#cfdbe8">
-               <effect>
-                  <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                  </Lighting>
-               </effect>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Label layoutX="35.0" layoutY="30.0" text="Nombre de Reporte" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font></Label>
-            <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="600.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png" />
-               </image>
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="565.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Iconos/icons8-add-user-male-96.png" />
-               </image>
-               <effect>
-                  <Bloom />
-               </effect>
-            </ImageView>
-         </children>
-      </Pane>
-   </children>
+<?import javafx.scene.Cursor?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550"
+            prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.usbbog.datanetworkoverlock.view.ReportesController">
+    <Pane prefHeight="550.0" prefWidth="246.0" style="-fx-background-color: #1C1B21;">
+        <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0"
+                   onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../../../Iconos/icons8-close-window-96.png"/>
+            <effect>
+                <Bloom/>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0"
+                   onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png"/>
+            <effect>
+                <Bloom/>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <Pane layoutX="14.0" layoutY="95.0" prefHeight="436.0" prefWidth="220.0"
+              style="-fx-background-color: #1C1B27;">
+            <effect>
+                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                </Lighting>
+            </effect>
+            <TextField layoutX="9.0" layoutY="14.0" promptText="Buscar" text="Buscar">
+                <effect>
+                    <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09"
+                              surfaceScale="1.16">
+                        <bumpInput>
+                            <Shadow/>
+                        </bumpInput>
+                        <light>
+                            <Light.Distant>
+                                <color>
+                                    <Color red="0.1725490242242813" green="0.1725490242242813"
+                                           blue="0.23529411852359772"/>
+                                </color>
+                            </Light.Distant>
+                        </light>
+                    </Lighting>
+                </effect>
+            </TextField>
+        </Pane>
+        <Label layoutX="18.0" layoutY="53.0" prefHeight="42.0" prefWidth="220.0" text="Reportes Existentes"
+               textFill="#cdc6c6">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+    </Pane>
+    <Pane layoutX="248.0" prefHeight="550.0" prefWidth="653.0" style="-fx-background-color: 2025;">
+        <Pane layoutX="35.0" layoutY="65.0" prefHeight="415.0" prefWidth="599.0"
+              style="-fx-background-color: #1C1B27 #1C1B27;">
+            <effect>
+                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                </Lighting>
+            </effect>
+        </Pane>
+        <Button fx:id="btnRegresar" layoutX="40.0" layoutY="485.0" mnemonicParsing="false" onAction="#Switch1"
+                prefHeight="42.0" prefWidth="109.0" style="-fx-background-color: #1C1B27;" text="Regresar"
+                textFill="#cfdbe8">
+            <effect>
+                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                </Lighting>
+            </effect>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button layoutX="405.0" layoutY="485.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0"
+                style="-fx-background-color: #1C1B27;" text="Examinar" textFill="#b6c3d0">
+            <effect>
+                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                </Lighting>
+            </effect>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button layoutX="525.0" layoutY="485.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0"
+                style="-fx-background-color: #1C1B27;" text="Exportar PDF" textFill="#cfdbe8">
+            <effect>
+                <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
+                    <bumpInput>
+                        <Shadow/>
+                    </bumpInput>
+                </Lighting>
+            </effect>
+            <font>
+                <Font size="15.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label layoutX="35.0" layoutY="30.0" text="Nombre de Reporte" textFill="WHITE">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="600.0" layoutY="15.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png"/>
+            <effect>
+                <Bloom/>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+        <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="565.0" layoutY="15.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../../../../Iconos/icons8-add-user-male.png"/>
+            <effect>
+                <Bloom/>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </ImageView>
+    </Pane>
 </AnchorPane>

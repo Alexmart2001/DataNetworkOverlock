@@ -39,6 +39,7 @@ public class ConexionSSH {
                 salida += linea + "\n";
             }
             salida += "\nadmin@dno-$ ";
+            System.out.println(salida);
             return salida;
         } catch (JSchException | IOException e) {
             System.out.println("Excepción de Jsch: " + e.getMessage());
