@@ -3,30 +3,12 @@
 
 Proyecto destinado a desarrollar una consola de gestión y monitoreo de vulnerabilidades en sistemas de redes de datos.
 
-# Instalación
-Para instalar la herramienta, basta con ejecutar el archivo **.jar** y la aplicación estará en marcha.
-
-Pero antes es necesario instalar y configurar las herramientas que se usarán para monitorear el sistema.
-
-Primero, hay que asegurarse de otorgar privilegios de ejecución al archivo de instalación. Para ello se usará el comando:
-
-``` shell
-chmod 500 instalacion.sh
-```
-
-Aquí se instalarán tanto los pre-requisitos como las herramientas de análisis y momitoreo de vulnerabilidades,  las cuales serían:
-
 **Pre-requisitos**
-- 
-- 
+- Java 16.0.2
 
+[Descarga para Windows](https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_windows-x64_bin.zip)
 
-Luego, se ejecuta
-``` shell
-./instalacion.sh
-```
-
-
+[Descarga para Linux](https://jdk.java.net/archive/)
 
 ### Contribuyentes
 * Rober Alexander Martínez Lagos - [@Alexmart2001](https://github.com/Alexmart2001)

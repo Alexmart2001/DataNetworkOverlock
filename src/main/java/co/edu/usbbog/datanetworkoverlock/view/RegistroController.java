@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -68,7 +69,8 @@ public class RegistroController {
         String contra = fieldConfirmPassword.getText();
 
         if (pas.equals(contra)) {
-            System.out.println(registrar(name, ape, cor, usu, pas));
+            if(registrar(name, ape, cor, usu, pas).equals("Creado"))
+                confirm();
             switchScenes(event);
         } else {
             System.out.println("Las contraseñas no coinciden");
@@ -95,6 +97,14 @@ public class RegistroController {
 
     public String registrar(String nombre, String apellido, String correo, String usuario, String password) {
         return registro.crearPersona(usuario, nombre, apellido, password, correo);
+    }
+
+    private void confirm() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Confirmación");
+        alert.setTitle("Registro");
+        alert.setContentText("Usuario registrado exitosamente");
+        alert.showAndWait();
     }
 
 }

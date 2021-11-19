@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,7 +8,6 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.Cursor?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550"
             prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -16,9 +16,6 @@
         <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0"
                    onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../../../Iconos/icons8-close-window-96.png"/>
-            <effect>
-                <Bloom/>
-            </effect>
             <cursor>
                 <Cursor fx:constant="HAND"/>
             </cursor>
@@ -26,15 +23,11 @@
         <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0"
                    onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../../../../Iconos/icons8-minimize-window-96.png"/>
-            <effect>
-                <Bloom/>
-            </effect>
             <cursor>
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </ImageView>
-        <Pane layoutX="14.0" layoutY="95.0" prefHeight="436.0" prefWidth="220.0"
-              style="-fx-background-color: #1C1B27;">
+        <Pane layoutX="14.0" layoutY="95.0" prefHeight="436.0" prefWidth="220.0" style="-fx-background-color: #1C1B27;">
             <effect>
                 <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
@@ -44,8 +37,7 @@
             </effect>
             <TextField layoutX="9.0" layoutY="14.0" promptText="Buscar" text="Buscar">
                 <effect>
-                    <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09"
-                              surfaceScale="1.16">
+                    <Lighting diffuseConstant="0.5" specularConstant="0.37" specularExponent="7.09" surfaceScale="1.16">
                         <bumpInput>
                             <Shadow/>
                         </bumpInput>
@@ -68,9 +60,8 @@
             </font>
         </Label>
     </Pane>
-    <Pane layoutX="248.0" prefHeight="550.0" prefWidth="653.0" style="-fx-background-color: 2025;">
-        <Pane layoutX="35.0" layoutY="65.0" prefHeight="415.0" prefWidth="599.0"
-              style="-fx-background-color: #1C1B27 #1C1B27;">
+    <Pane layoutX="248.0" prefHeight="550.0" prefWidth="653.0">
+        <Pane layoutX="35.0" layoutY="65.0" prefHeight="415.0" prefWidth="599.0" style="-fx-background-color: #1C1B27;">
             <effect>
                 <Lighting diffuseConstant="0.5" light="$null" specularExponent="15.0" surfaceScale="0.11">
                     <bumpInput>
@@ -133,22 +124,16 @@
                 <Font size="20.0"/>
             </font>
         </Label>
-        <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="600.0" layoutY="15.0" pickOnBounds="true"
+        <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="604.0" layoutY="15.0" pickOnBounds="true"
                    preserveRatio="true">
             <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png"/>
-            <effect>
-                <Bloom/>
-            </effect>
             <cursor>
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </ImageView>
         <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="565.0" layoutY="15.0" pickOnBounds="true"
                    preserveRatio="true">
-            <Image url="@../../../../../Iconos/icons8-add-user-male.png"/>
-            <effect>
-                <Bloom/>
-            </effect>
+            <Image url="@../../../../../Iconos/icons8-add-user-male-96.png"/>
             <cursor>
                 <Cursor fx:constant="HAND"/>
             </cursor>

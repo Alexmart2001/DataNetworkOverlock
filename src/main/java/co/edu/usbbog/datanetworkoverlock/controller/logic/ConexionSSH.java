@@ -36,10 +36,11 @@ public class ConexionSSH {
             canal.connect(5000);
 
             while ((linea = lector.readLine()) != null) {
-                salida += linea + "\n";
+                //salida += linea + "\n";
+                System.out.println(linea);
             }
             salida += "\nadmin@dno-$ ";
-            System.out.println(salida);
+            //System.out.println(salida);
             return salida;
         } catch (JSchException | IOException e) {
             System.out.println("Excepción de Jsch: " + e.getMessage());

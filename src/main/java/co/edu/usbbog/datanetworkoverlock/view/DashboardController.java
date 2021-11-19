@@ -2,7 +2,6 @@ package co.edu.usbbog.datanetworkoverlock.view;
 
 import co.edu.usbbog.datanetworkoverlock.controller.config.HostInfo;
 import co.edu.usbbog.datanetworkoverlock.controller.logic.ConexionSSH;
-import com.jcraft.jsch.SocketFactory;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -22,8 +21,8 @@ import javafx.stage.Stage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
-import java.security.Key;
 
 public class DashboardController {
 
@@ -35,6 +34,10 @@ public class DashboardController {
     private Scene scene;
     @FXML
     private ImageView btnOpciones;
+    @FXML
+    private ImageView btnAddUser;
+    @FXML
+    private ImageView btnReport;
     @FXML
     private ImageView btnClose;
     @FXML
@@ -48,39 +51,42 @@ public class DashboardController {
     @FXML
     public TextArea codeArea;
 
+    static ServerSocket server;
+    static Socket client;
+    static DataInputStream flujoEntrada;
+    static DataOutputStream flujoSalida;
+    static String entrada = "";
+    static String salida = "";
+    static int port = 9000;
 
-    SocketFactory socketFactory;
-    Socket socket;
-    DataInputStream entrada;
-    DataOutputStream salida;
-    String linea;
+    public void readSocket() {
+        //Task<String> concurrentTask = new Task<String>() {
+        //    @Override
+        //    protected String call() {
+        //        return new ConexionSSH().ejecutarComando(
+        //                HostInfo.USER.getValue(),
+        //                HostInfo.PASSWORD.getValue(),
+        //                HostInfo.HOST.getValue(),
+        //                Integer.parseInt(HostInfo.PORT.getValue()),
+        //                command
+        //        );
+        //    }
+        //};
+        //concurrentTask.setOnSucceeded(event -> codeArea.appendText(concurrentTask.getValue()));
+        //new Thread(concurrentTask).start();
 
-    public void readSocket(String command) {
-        Task<String> concurrentTask = new Task<String>() {
-            @Override
-            protected String call() {
-                return new ConexionSSH().ejecutarComando(
-                        HostInfo.USER.getValue(),
-                        HostInfo.PASSWORD.getValue(),
-                        HostInfo.HOST.getValue(),
-                        Integer.parseInt(HostInfo.PORT.getValue()),
-                        command
-                );
-            }
-        };
-
-        concurrentTask.setOnSucceeded(event -> codeArea.appendText(concurrentTask.getValue()));
-
-        new Thread(concurrentTask).start();
 
         //try {
-        //    socket = socketFactory.createSocket(HostInfo.HOST.getValue(), 9000);
-        //    entrada = new DataInputStream(socketFactory.getInputStream(socket));
-        //    salida = new DataOutputStream(socketFactory.getOutputStream(socket));
+        //    server = new ServerSocket(port);
+        //    client = server.accept();
+        //    flujoEntrada = new DataInputStream(client.getInputStream());
+        //    flujoSalida = new DataOutputStream(client.getOutputStream());
+        //    int i = 0;
         //    while (true) {
-        //        linea = entrada.readUTF();
-        //        System.out.println("Recibiendo: " + linea);
-        //        //codeArea.appendText(linea);
+        //        entrada = flujoEntrada.readUTF();
+        //        System.out.println("Recibiendo: " + entrada);
+        //        codeArea.appendText(entrada);
+        //        System.out.println("counter: " + i++);
         //    }
         //} catch (IOException e) {
         //    e.printStackTrace();
@@ -88,9 +94,11 @@ public class DashboardController {
         //}
     }
 
-    public void writeSocket() {
+    public void writeSocket(String command) {
         //try {
-//
+        //    salida = command;
+        //    flujoSalida.writeUTF(salida);
+        //    System.out.println("Enviando: " + salida);
         //} catch (IOException e) {
         //    e.printStackTrace();
         //    System.out.println("Error de sockets");
@@ -99,11 +107,32 @@ public class DashboardController {
 
     @FXML
     public void execute(KeyEvent event) {
+        String mensaje, command;
         if (event.getCode() == KeyCode.ENTER) {
-            String command = codeArea.getText();
-            int index = command.indexOf('$');
-            readSocket(command.substring(index));
-            System.out.println(command.substring(index));
+            //command = codeArea.getText();
+            //int index = command.indexOf('$');
+            //writeSocket(command.substring(index));
+            //System.out.println(command.substring(index));
+            mensaje = "Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-08 12:20 -05\n" +
+                    "Nmap scan report for 192.168.1.5\n" +
+                    "Host is up (0.00038s latency).\n" +
+                    "Not shown: 997 filtered ports\n" +
+                    "PORT     STATE SERVICE\n" +
+                    "3306/tcp open  mysql\n" +
+                    "5357/tcp open  wsdapi\n" +
+                    "7070/tcp open  realserver\n" +
+                    "MAC Address: 28:39:26:2C:FA:5D (CyberTAN Technology)\n" +
+                    "\n" +
+                    "Nmap done: 1 IP address (1 host up) scanned in 4.29 seconds \n";
+            try {
+                Thread.sleep(4000);
+                codeArea.appendText(mensaje);
+                codeArea.appendText("\n");
+            } catch (InterruptedException e) {
+                System.out.println("Error en el thread: " + e);
+            } finally {
+                codeArea.appendText("admin@dno-$ ");
+            }
         }
     }
 
@@ -142,6 +171,16 @@ public class DashboardController {
             if (t.getButton() == MouseButton.PRIMARY)
                 context.show(btnOpciones, t.getSceneX(), t.getSceneY());
         });
+    }
+
+    @FXML
+    public void switchUser(MouseEvent event) {
+        switchScenes(event, "registro.fxml");
+    }
+
+    @FXML
+    public void switchReports(MouseEvent event) {
+        switchScenes(event, "reportes.fxml");
     }
 
     private void switchScenes(Event event, String target) {

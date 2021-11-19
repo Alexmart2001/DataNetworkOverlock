@@ -6,92 +6,84 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.usbbog.datanetworkoverlock.view.UsuarioController">
-   <children>
-      <Label layoutX="76.0" layoutY="106.0" text="Nombre de Usuario" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="188.0" text="Nombre" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="245.0" text="Apellido" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="296.0" text="Correo Electronico" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="76.0" layoutY="354.0" text="Reportes generados" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Iconos/icons8-close-window-96.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect></ImageView>
-      <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Iconos/icons8-minimize-window-96.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#SwitchR" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Iconos/icons8-business-report-96.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect>
-      </ImageView>
-      <ImageView fx:id="Btn_Dash" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0" onMouseClicked="#Switch1" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png" />
-         </image>
-         <effect>
-            <Bloom />
-         </effect>
-      </ImageView>
-      <Button layoutX="76.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;" text="Cambiar usuario" textFill="WHITE">
-         <effect>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550"
+            prefWidth="900" style="-fx-background-color: #1f2025;" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.usbbog.datanetworkoverlock.view.UsuarioController">
+    <Label layoutX="76.0" layoutY="106.0" text="Nombre de Usuario" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="28.0"/>
+        </font>
+    </Label>
+    <Label layoutX="76.0" layoutY="188.0" text="Nombre" textFill="WHITE">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <Label layoutX="76.0" layoutY="245.0" text="Apellido" textFill="WHITE">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <Label layoutX="76.0" layoutY="296.0" text="Correo Electronico" textFill="WHITE">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <Label layoutX="76.0" layoutY="354.0" text="Reportes generados" textFill="WHITE">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" onMouseClicked="#cerrar"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-close-window-96.png"/>
+    </ImageView>
+    <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="40.0" layoutX="40.0" layoutY="15.0"
+               onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-minimize-window-96.png"/>
+    </ImageView>
+    <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="820.0" layoutY="15.0" onMouseClicked="#SwitchR"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-business-report-96.png"/>
+    </ImageView>
+    <ImageView fx:id="Btn_Dash" fitHeight="30.0" fitWidth="40.0" layoutX="850.0" layoutY="15.0"
+               onMouseClicked="#Switch1"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../../Iconos/icons8-financial-growth-analysis-96.png"/>
+    </ImageView>
+    <Button layoutX="76.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;"
+            text="Cambiar usuario" textFill="WHITE">
+        <effect>
             <Lighting diffuseConstant="0.55" light="$null" specularExponent="15.0" surfaceScale="0.11">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
+                <bumpInput>
+                    <Shadow/>
+                </bumpInput>
             </Lighting>
-         </effect></Button>
-      <Button layoutX="196.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;" text="Cerrar sesion" textFill="WHITE">
-         <effect>
+        </effect>
+    </Button>
+    <Button layoutX="196.0" layoutY="450.0" mnemonicParsing="false" style="-fx-background-color: #1C1B17;"
+            text="Cerrar sesion" textFill="WHITE">
+        <effect>
             <Lighting diffuseConstant="0.55" light="$null" specularExponent="15.0" surfaceScale="0.11">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
+                <bumpInput>
+                    <Shadow/>
+                </bumpInput>
             </Lighting>
-         </effect></Button>
-      <Button layoutX="300.0" layoutY="450.0" mnemonicParsing="false" onAction="#Switch1" style="-fx-background-color: #1C1B17;" text="regresar" textFill="WHITE">
-         <effect>
+        </effect>
+    </Button>
+    <Button layoutX="300.0" layoutY="450.0" mnemonicParsing="false" onAction="#Switch1"
+            style="-fx-background-color: #1C1B17;" text="regresar" textFill="WHITE">
+        <effect>
             <Lighting diffuseConstant="0.55" light="$null" specularExponent="15.0" surfaceScale="0.11">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
+                <bumpInput>
+                    <Shadow/>
+                </bumpInput>
             </Lighting>
-         </effect></Button>
-      <ImageView fitHeight="422.0" fitWidth="422.0" layoutX="428.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Iconos/WhatsApp%20Image%202021-09-23%20at%2010.01.07%20PM.jpeg" />
-         </image>
-      </ImageView>
-   </children>
+        </effect>
+    </Button>
+    <ImageView fitHeight="422.0" fitWidth="422.0" layoutX="428.0" layoutY="75.0" pickOnBounds="true"
+               preserveRatio="true">
+        <!--Image url="@../../../../../Iconos/WhatsApp%20Image%202021-09-23%20at%2010.01.07%20PM.jpeg"/-->
+    </ImageView>
 </AnchorPane>

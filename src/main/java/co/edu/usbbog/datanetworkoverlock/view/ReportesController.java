@@ -25,9 +25,7 @@ public class ReportesController {
 
     @FXML
     public void cerrar() {
-        // get a handle to the stage
         stage = (Stage) btnClose.getScene().getWindow();
-        // do what you have to do
         stage.close();
     }
 

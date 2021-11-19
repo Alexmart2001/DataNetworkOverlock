@@ -12,29 +12,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NmapDAOImpl implements NmapDAO{
+public class NmapDAOImpl implements NmapDAO {
     private final Conexion conexion;
 
-    public NmapDAOImpl(){
+    public NmapDAOImpl() {
         this.conexion = new Conexion();
     }
 
     @Override
     public boolean create(NmapDTO nmap) {
         boolean seHizo = false;
-        try{
+        try {
             String query = "INSERT INTO nmap (id_analisis_nmap, protocolo_puerto, estado, razon, nombre_servicio,"
                     + "producto, version, puerto_id, informacion_extra, backdoor, fallos_de_red) VALUES ("
                     + nmap.getIdAnalisisNmap() + ", '"
-                    + nmap.getProtocoloPuerto() + ",'"
-                    + nmap.getEstado() +"','"
-                    + nmap.getRazon() +"','"
-                    + nmap.getNombreServicio() + "','"
-                    + nmap.getProducto() + "','"
-                    + nmap.getVersion() + "',"
-                    + nmap.getPuertoId() + ",'"
-                    + nmap.getInformacionExtra() +"',"
-                    + nmap.getBackdoor().getIdBackdoor() +","
+                    + nmap.getProtocoloPuerto() + ", '"
+                    + nmap.getEstado() + "', '"
+                    + nmap.getRazon() + "', '"
+                    + nmap.getNombreServicio() + "', '"
+                    + nmap.getProducto() + "', '"
+                    + nmap.getVersion() + "', "
+                    + nmap.getPuertoId() + ", '"
+                    + nmap.getInformacionExtra() + "', "
+                    + nmap.getBackdoor().getIdBackdoor() + ", "
                     + nmap.getFallosRed().getIdFallo()
                     + ");";
             System.out.println(query);
@@ -61,12 +61,12 @@ public class NmapDAOImpl implements NmapDAO{
 
     @Override
     public NmapDTO find(Integer id_analisis_nmap) {
-    NmapDTO nmap = null;
+        NmapDTO nmap = null;
         BackdoorDTO backdoor;
         FallosDeRedDTO fallos;
         BackdoorDAO backdoordao = new BackdoorDAOImpl();
         FallosDeRedDAO fallosdao = new FallosDeRedDAOImpl();
-        try{
+        try {
             String query = "SELECT*FROM nmap WHERE id_analisis_nmap = " + id_analisis_nmap + ";";
             System.out.println(query);
             this.conexion.conectar();
@@ -104,15 +104,16 @@ public class NmapDAOImpl implements NmapDAO{
         }
         return nmap;
     }
+
     @Override
     public List<NmapDTO> findAll() {
         List<NmapDTO> nmap = new ArrayList<>();
-        NmapDTO nma =null;
+        NmapDTO nma = null;
         BackdoorDTO backdoor;
         FallosDeRedDTO fallos;
         BackdoorDAO backdoordao = new BackdoorDAOImpl();
         FallosDeRedDAO fallosdao = new FallosDeRedDAOImpl();
-        try{
+        try {
             String query = "SELECT * FROM nmap;";
             System.out.println(query);
             this.conexion.conectar();
